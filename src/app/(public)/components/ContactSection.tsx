@@ -35,6 +35,12 @@ export default function ContactSection() {
         {[
           {
             type: 'email',
+            value: 'omotola@featnode.tech',
+            href: 'mailto:omotola@featnode.tech',
+            label: 'omotola@featnode.tech',
+          },
+          {
+            type: 'email',
             value: 'omotolamahlangu@gmail.com',
             href: 'mailto:omotolamahlangu@gmail.com',
             label: 'omotolamahlangu@gmail.com',
@@ -53,6 +59,12 @@ export default function ContactSection() {
           },
           {
             type: 'phone',
+            value: '📞 +27 84 731 6783',
+            href: '',
+            label: '📞 +27 84 731 6783',
+          },
+          {
+            type: 'phone',
             value: '📞 +263 776 092 688',
             href: '',
             label: '📞 +263 776 092 688',
@@ -60,7 +72,7 @@ export default function ContactSection() {
         ].map((item, i) =>
           item.href ? (
             <motion.a
-              key={item.type}
+              key={item.value}
               href={item.href}
               target={item.type !== 'email' ? '_blank' : undefined}
               rel={item.type !== 'email' ? 'noopener noreferrer' : undefined}
@@ -77,7 +89,7 @@ export default function ContactSection() {
             </motion.a>
           ) : (
             <motion.p
-              key={item.type}
+              key={item.value}
               className='text-[var(--color-foreground)]'
               initial={{ x: -40, opacity: 0 }}
               animate={inView ? { x: 0, opacity: 1 } : {}}
