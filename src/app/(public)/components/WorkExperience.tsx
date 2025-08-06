@@ -37,7 +37,7 @@ const jobs = [
     ],
   },
   {
-    title: 'Full Stack Developer (Contract)',
+    title: 'Web Developer (Contract)',
     company: 'Lukhanyo Mdingi Fashion',
     duration: 'Aug 2023 – Feb 2024',
     location: 'Remote',
