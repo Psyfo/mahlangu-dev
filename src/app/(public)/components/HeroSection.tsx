@@ -10,7 +10,10 @@ const subtitles = [
 
 export default function HeroSection() {
   return (
-    <section className='w-screen h-screen flex flex-col md:flex-row items-stretch bg-[var(--color-background)] overflow-hidden'>
+    <section
+      id='hero-section'
+      className='w-screen h-screen flex flex-col md:flex-row items-stretch bg-[var(--color-background)] overflow-hidden'
+    >
       {/* Left: Text Content */}
       <motion.div
         initial={{ x: -30, opacity: 0 }}
