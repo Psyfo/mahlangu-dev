@@ -76,7 +76,19 @@ export default function HeroSection() {
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+              box-shadow: 0 8px 32px 0 rgba(0,0,0,0.22);
+              border: 6px solid var(--color-accent);
+              z-index: 1;
+            }
+            .hero-hex::before {
+              content: "";
+              position: absolute;
+              inset: -18px;
+              border-radius: 50%;
+              background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+              opacity: 0.35;
+              z-index: 0;
+              pointer-events: none;
             }
             .hero-hex::after {
               content: "";
@@ -84,6 +96,9 @@ export default function HeroSection() {
               inset: 0;
               background: rgba(0,0,0,0.20);
               clip-path: inherit;
+              border-radius: 50%;
+              z-index: 2;
+              pointer-events: none;
             }
           `}
         </style>
