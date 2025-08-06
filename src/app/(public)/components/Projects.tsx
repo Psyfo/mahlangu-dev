@@ -45,7 +45,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: '-50%' });
 
   return (
-    <section ref={ref} className='max-w-4xl mx-auto px-6 py-12'>
+    <section ref={ref} id='projects' className='max-w-4xl mx-auto px-6 py-12'>
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
