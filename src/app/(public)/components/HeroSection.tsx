@@ -1,59 +1,93 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
 
-export default function Hero() {
+const subtitles = [
+  'Software Developer',
+  'Technical Trainer',
+  'Solutions Advisor',
+];
+
+export default function HeroSection() {
   return (
-    <section className='flex flex-col items-center justify-center text-center py-20 px-4'>
+    <section className='w-screen h-screen flex flex-col md:flex-row items-stretch bg-[var(--color-background)] overflow-hidden'>
+      {/* Left: Text Content */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className='mb-6'
+        initial={{ x: -30, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        className='flex flex-col justify-center items-start px-8 py-12 w-full md:w-1/2 h-1/2 md:h-full z-10'
       >
-        <Image
-          src='/images/head.jpg' // or "/logo-dark.svg" based on theme
-          alt='Mahlangu.dev logo'
-          width={80}
-          height={80}
-          className='rounded-full w-25'
-          priority
-        />
+        <motion.h1
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
+          className='text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--color-foreground)] font-cmd mb-6'
+        >
+          Sipho Omotola Mahlangu
+        </motion.h1>
+        <div className='mt-4 max-w-3xl'>
+          <div className='flex flex-col md:flex-row md:items-center md:gap-3'>
+            {subtitles.map((line, i) => (
+              <motion.span
+                key={line}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.6,
+                  ease: 'easeOut',
+                  delay: 1.1 + i * 0.2, // Stagger each line
+                }}
+                className='text-xl sm:text-xl font-light text-[var(--color-foreground)]/80 font-cmd'
+              >
+                {line}
+                {/* Pipe separator for desktop, except after last item */}
+                {i < subtitles.length - 1 && (
+                  <span className='hidden md:inline mx-2 text-[var(--color-foreground)]/50'>
+                    |
+                  </span>
+                )}
+              </motion.span>
+            ))}
+          </div>
+        </div>
       </motion.div>
 
-      <motion.h1
-        className='text-4xl sm:text-5xl font-bold tracking-tight'
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-      >
-        Sipho Mahlangu
-      </motion.h1>
-
-      <motion.p
-        className='mt-4 max-w-xl text-lg text-gray-600 dark:text-gray-300'
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        Full Stack Developer building fast, functional, and beautiful web
-        applications.
-      </motion.p>
-
+      {/* Right: Portrait Background - Circle Clip */}
       <motion.div
-        className='mt-8'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
+        initial={{ x: 30, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        className='relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center'
+        style={{
+          backgroundColor: 'var(--color-background)',
+        }}
       >
-        <Link
-          href='/projects'
-          className='inline-block px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition'
-        >
-          View Projects
-        </Link>
+        <style>
+          {`
+            .hero-hex {
+              width: 90%;
+              aspect-ratio: 1 / 1;
+              background-image: url('/images/hero_portrait_2.jpg');
+              background-size: cover;
+              background-position: center 20%;
+              clip-path: circle(50% at 50% 50%);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+            }
+            .hero-hex::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: rgba(0,0,0,0.20);
+              clip-path: inherit;
+            }
+          `}
+        </style>
+        <div className='hero-hex' />
       </motion.div>
     </section>
   );
