@@ -69,7 +69,7 @@ export default function HeroSection() {
         <style>
           {`
             .hero-hex {
-              width: 90%;
+              width: 60%;
               aspect-ratio: 1 / 1;
               background-image: url('/images/hero_portrait_2.jpg');
               background-size: cover;
