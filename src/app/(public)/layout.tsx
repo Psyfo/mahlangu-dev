@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import '../../styles/globals.css';
 
+import Header from '@/components/Header';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mahlangu.dev'),
   title: 'Sipho Mahlangu - Software Developer',
   description:
     'Portfolio of Sipho Mahlangu, a software developer specializing in web applications.',
@@ -60,7 +63,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
