@@ -10,7 +10,7 @@ const jobs = [
     duration: 'Sep 2024 – Present',
     location: 'Gweru, Zimbabwe',
     description: [
-      'Lectured 100+ tertiary students in Data Science modules (R Programming, Computer Vision, etc).',
+      'Lectured 100+ tertiary students in Data Science modules including R Programming, Computer Vision, Advanced Data Warehousing, and Data Mining.',
     ],
   },
   {
@@ -19,11 +19,76 @@ const jobs = [
     duration: 'Jan 2022 – Present',
     location: 'Remote',
     description: [
-      'Built 10+ MVPs for clients in fashion, healthcare, and education.',
-      'Notable: Lukhanyo Mdingi Archive (Shopify), Carina Pereira Portfolio (Next.js)',
+      'Delivered web and mobile solutions for clients in fashion, healthcare, education, and professional services.',
+      'Developed the Lukhanyo Mdingi Archive Website (Shopify Liquid).',
+      'Built the Carina Pereira Portfolio Website using Next.js and GA4.',
+      'Created MVPs and tools using Node.js, Angular, and MongoDB.',
+      'Integrated cloud services (AWS S3, Azure) and analytics tools.',
     ],
   },
-  // Add the rest similarly...
+  {
+    title: 'Full Stack Developer (Contract)',
+    company: 'E2E Enterprises',
+    duration: '2023 – 2024',
+    location: 'Remote',
+    description: [
+      'Built an MVP for a healthcare booking web app using Node.js, MongoDB, and Angular.',
+      'Enabled patients to book appointments with nearby doctors through a responsive UI.',
+    ],
+  },
+  {
+    title: 'Full Stack Developer (Contract)',
+    company: 'Lukhanyo Mdingi Fashion',
+    duration: 'Aug 2023 – Feb 2024',
+    location: 'Remote',
+    description: [
+      'Developed a Shopify-integrated archive website using Shopify Liquid, HTML/CSS, and JavaScript.',
+      'Enhanced brand visibility with curated galleries and e-commerce functionality.',
+    ],
+  },
+  {
+    title: 'Tech Solutions Advisor & Software Developer',
+    company: 'Mobisynco',
+    duration: 'Jan 2017 – Dec 2021',
+    location: 'Durban, South Africa',
+    description: [
+      'Delivered custom web solutions (Node.js, Angular) for SMEs.',
+      'Managed cloud platforms (CentOS, Debian).',
+      'Configured e-commerce setups and heavily modified Shopify themes.',
+    ],
+  },
+  {
+    title: 'Part-time Teaching Assistant',
+    company: 'Durban University of Technology',
+    duration: '2017 – 2018',
+    location: 'Durban, South Africa',
+    description: [
+      'Tutored C#/.NET and software development courses.',
+      'Managed Moodle classes and online invigilation.',
+      'Designed a prototype workload management system (Node.js, GraphQL, MongoDB).',
+    ],
+  },
+  {
+    title: 'Tech Startup Advisor',
+    company: 'Delyvr',
+    duration: '2017 – 2018',
+    location: 'Remote',
+    description: [
+      'Co-planned pitch decks and secured angel investment.',
+      'Configured Azure cloud infrastructure for MVP development.',
+    ],
+  },
+  {
+    title: 'Exam Center Facilitator & IT Trainer',
+    company: 'Multimedia Tecknowledge',
+    duration: 'Aug 2008 – Dec 2013',
+    location: 'Bulawayo, Zimbabwe',
+    description: [
+      'Trained candidates in Microsoft Server and CompTIA certifications, achieving 95% pass rate.',
+      'Maintained Prometric/Pearson VUE testing center with 99.9% uptime.',
+      'Built in-house lab infrastructure using Microsoft Active Directory.',
+    ],
+  },
 ];
 
 export default function WorkExperience() {
