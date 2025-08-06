@@ -1,7 +1,7 @@
 'use client';
 
 import { Command } from 'cmdk';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const sections = [
   { id: 'hero-section', label: 'Home' },
@@ -15,30 +15,38 @@ const sections = [
 
 export default function CommandPalette() {
   const ref = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
 
   // Open palette with Cmd+K
-  React.useEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        ref.current?.focus();
+        setOpen((prev) => !prev);
+      }
+      // Close on Escape
+      if (e.key === 'Escape') {
+        setOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Scroll to section
+  // Scroll to section and close palette
   const handleSelect = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setOpen(false);
     }
   };
 
   return (
     <Command.Dialog
       ref={ref}
+      open={open}
+      onOpenChange={setOpen}
       label='Command Palette'
       className='fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-md z-50 bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg shadow-lg'
     >
