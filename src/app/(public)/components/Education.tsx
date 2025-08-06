@@ -13,7 +13,7 @@ export default function Education() {
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-2xl font-bold mb-4'
+        className='text-2xl font-bold mb-4 text-[var(--midnight-green)]' // midnight green
       >
         Education
       </motion.h2>

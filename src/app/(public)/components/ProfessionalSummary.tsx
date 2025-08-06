@@ -16,7 +16,7 @@ export default function ProfessionalSummary() {
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='mb-4 font-bold text-2xl'
+        className='mb-4 font-bold text-2xl text-[var(--midnight-green)]'
       >
         Professional Summary
       </motion.h2>
