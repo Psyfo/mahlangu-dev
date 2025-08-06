@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* JetBrains Mono font faces */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Inter font faces */
 @font-face {
     font-family: 'Inter';
@@ -66,15 +75,83 @@
     /* text-blue-500 */
     --color-border: var(--border);
     /* border-gray-200 */
-    --font-sans: 'Inter', var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-    --font-mono: 'Fira Code', var(--font-geist-mono), ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Fira Code', ui-monospace, monospace;
+    --font-cmd: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Custom Palette */
+    --charcoal: #374E5E;
+    --charcoal-100: #0b0f13;
+    --charcoal-200: #161f25;
+    --charcoal-300: #212e38;
+    --charcoal-400: #2c3e4b;
+    --charcoal-500: #374e5e;
+    --charcoal-600: #52738b;
+    --charcoal-700: #7697af;
+    --charcoal-800: #a4bac9;
+    --charcoal-900: #d1dce4;
+
+    --raisin-black: #2E2929;
+    --raisin-black-100: #090808;
+    --raisin-black-200: #121010;
+    --raisin-black-300: #1c1818;
+    --raisin-black-400: #252121;
+    --raisin-black-500: #2e2929;
+    --raisin-black-600: #5b5151;
+    --raisin-black-700: #887878;
+    --raisin-black-800: #afa5a5;
+    --raisin-black-900: #d7d2d2;
+
+    --black-olive: #383833;
+    --black-olive-100: #0b0b0a;
+    --black-olive-200: #161614;
+    --black-olive-300: #22221f;
+    --black-olive-400: #2d2d29;
+    --black-olive-500: #383833;
+    --black-olive-600: #636359;
+    --black-olive-700: #8c8c80;
+    --black-olive-800: #b2b2aa;
+    --black-olive-900: #d9d9d5;
+
+    --slate-gray: #808D98;
+    --slate-gray-100: #191c1f;
+    --slate-gray-200: #32393e;
+    --slate-gray-300: #4c555d;
+    --slate-gray-400: #65717b;
+    --slate-gray-500: #808d98;
+    --slate-gray-600: #9aa4ac;
+    --slate-gray-700: #b3bbc1;
+    --slate-gray-800: #cdd2d6;
+    --slate-gray-900: #e6e8ea;
+
+    --eerie-black: #201F1F;
+    --eerie-black-100: #060606;
+    --eerie-black-200: #0c0c0c;
+    --eerie-black-300: #131212;
+    --eerie-black-400: #191818;
+    --eerie-black-500: #201f1f;
+    --eerie-black-600: #4d4a4a;
+    --eerie-black-700: #7b7676;
+    --eerie-black-800: #a7a3a3;
+    --eerie-black-900: #d3d1d1;
+
+    --midnight-green: #18585E;
+    --midnight-green-100: #051113;
+    --midnight-green-200: #0a2325;
+    --midnight-green-300: #0e3438;
+    --midnight-green-400: #13464b;
+    --midnight-green-500: #18585e;
+    --midnight-green-600: #28929c;
+    --midnight-green-700: #44c3cf;
+    --midnight-green-800: #82d7df;
+    --midnight-green-900: #c1ebef;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0f0f0f;
-        --foreground: #f9fafb;
-        --accent: #60a5fa;
+        --background: var(--eerie-black);
+        --foreground: var(--slate-gray-800);
+        --accent: var(--midnight-green);
         --border: #27272a;
     }
 }
@@ -82,5 +159,23 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-sans);
+    font-family: var(--font-cmd);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.sr-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
 }
