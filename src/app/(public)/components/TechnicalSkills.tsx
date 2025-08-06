@@ -18,7 +18,7 @@ const skills = {
 
 export default function TechnicalSkills() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: true, margin: '-50%' });
 
   return (
     <section
