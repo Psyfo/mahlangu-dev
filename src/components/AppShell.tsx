@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Header from './Header';
 
@@ -11,7 +11,7 @@ function Spinner() {
         Welcome Visitor
       </h1>
       <p className='text-sm text-[var(--color-foreground)] mb-6'>
-        How can I help?
+        Building digital experiences, one line at a time.
       </p>
       <div className='animate-spin rounded-full h-10 w-10 border-t-4 border-[var(--color-accent)] border-opacity-60'></div>
       <span className='mt-4 text-xs text-[var(--color-foreground)]/60'>
@@ -23,11 +23,30 @@ function Spinner() {
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [headerReady, setHeaderReady] = useState(false);
+  const [minDelayPassed, setMinDelayPassed] = useState(false);
+  const splashShown = useRef(false);
+
+  useEffect(() => {
+    if (!splashShown.current) {
+      const timer = setTimeout(() => setMinDelayPassed(true), 2000);
+      return () => clearTimeout(timer);
+    } else {
+      setMinDelayPassed(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (headerReady && minDelayPassed && !splashShown.current) {
+      splashShown.current = true;
+    }
+  }, [headerReady, minDelayPassed]);
+
+  const showContent = headerReady && minDelayPassed;
 
   return (
     <>
       <Header onReady={() => setHeaderReady(true)} />
-      {headerReady ? children : <Spinner />}
+      {showContent ? children : <Spinner />}
     </>
   );
 }
