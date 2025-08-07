@@ -18,6 +18,23 @@
     }
 }
 
+/* Light theme */
+:root,
+[data-theme="light"] {
+    --background: var(--black-olive-900);
+    --foreground: var(--eerie-black);
+    --accent: var(--midnight-green);
+    --border: #e5e7eb;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --background: var(--eerie-black);
+    --foreground: var(--slate-gray-800);
+    --accent: var(--midnight-green);
+    --border: #27272a;
+}
+
 @theme inline {
     --color-background: var(--background);
     /* bg-white */
