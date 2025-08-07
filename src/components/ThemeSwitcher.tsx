@@ -12,7 +12,7 @@ const getInitialTheme = (): 'light' | 'dark' | 'system' => {
   return 'system';
 };
 
-const ThemeSwitcher: React.FC = () => {
+export default function ThemeSwitcher({ onReady }: { onReady?: () => void }) {
   const [theme, setTheme] = useState<'light' | 'dark' | 'system' | null>(null);
 
   useEffect(() => {
@@ -27,9 +27,16 @@ const ThemeSwitcher: React.FC = () => {
       document.documentElement.setAttribute('data-theme', theme);
     }
     localStorage.setItem('theme', theme);
-  }, [theme]);
+    if (onReady) {
+      console.log('ThemeSwitcher calling onReady');
+      onReady();
+    }
+  }, [theme, onReady]);
 
-  if (!theme) return null; // Wait until theme is loaded
+  if (!theme) {
+    console.log('ThemeSwitcher: theme not set, returning null');
+    return null;
+  }
 
   return (
     <div className='flex items-center gap-2'>
@@ -47,6 +54,4 @@ const ThemeSwitcher: React.FC = () => {
       </select>
     </div>
   );
-};
-
-export default ThemeSwitcher;
+}
