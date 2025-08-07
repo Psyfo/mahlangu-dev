@@ -1,4 +1,53 @@
-import React from 'react';
+import '../styles/globals.css';
+
+import Script from 'next/script';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sipho Omotola Mahlangu',
+  url: 'https://mahlangu.dev',
+  image: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
+  jobTitle: 'Software Developer',
+  sameAs: [
+    'https://www.linkedin.com/in/sipho-mahlangu/',
+    'https://github.com/Psyfo',
+  ],
+  description:
+    'Portfolio of Sipho Mahlangu, a software developer specializing in web applications, cloud, and data science.',
+};
+
+export const metadata = {
+  metadataBase: new URL('https://mahlangu.dev'),
+  title: 'Sipho Mahlangu - Software Developer',
+  description:
+    'Portfolio of Sipho Mahlangu, a software developer specializing in web applications.',
+  keywords: ['Sipho Mahlangu', 'Software Developer', 'Web Applications'],
+  openGraph: {
+    title: 'Sipho Mahlangu - Software Developer',
+    description:
+      'Portfolio of Sipho Mahlangu, a software developer specializing in web applications.',
+    url: 'https://mahlangu.dev',
+    siteName: 'Sipho Mahlangu - Software Developer',
+    images: [
+      {
+        url: '/images/hero_portrait_2.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sipho Mahlangu - Software Developer',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sipho Mahlangu - Software Developer',
+    description:
+      'Portfolio of Sipho Mahlangu, a software developer specializing in web applications.',
+    images: ['/images/hero_portrait.jpg'],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -7,6 +56,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='canonical' href='https://mahlangu.dev' />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-KZTX3JBNBR'
+          strategy='afterInteractive'
+        />
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KZTX3JBNBR');
+          `}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   );
