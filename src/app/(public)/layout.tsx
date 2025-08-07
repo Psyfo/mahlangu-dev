@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '../../styles/globals.css';
 
+import Script from 'next/script';
+
 import AppShell from '@/components/AppShell';
 
 export const metadata: Metadata = {
@@ -63,7 +65,20 @@ export default function RootLayout({
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-KZTX3JBNBR'
+          strategy='afterInteractive'
+        />
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KZTX3JBNBR');
+          `}
+        </Script>
       </head>
+
       <body>
         <AppShell>{children}</AppShell>
       </body>
