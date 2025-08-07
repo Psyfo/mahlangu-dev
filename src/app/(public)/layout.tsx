@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../../styles/globals.css';
 
-import Header from '@/components/Header';
+import AppShell from '@/components/AppShell';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mahlangu.dev'),
@@ -64,8 +64,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
