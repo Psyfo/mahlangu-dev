@@ -1,69 +1,21 @@
 @import "tailwindcss";
 
-/* JetBrains Mono font faces */
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
-/* Inter font faces */
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Fira Code font faces */
-@font-face {
-    font-family: 'Fira Code';
-    src: url('/fonts/FiraCode-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    src: url('/fonts/FiraCode-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
 
 :root {
-    --background: #ffffff;
-    --foreground: #111827;
-    --accent: #3b82f6;
+    --background: var(--black-olive-900);
+    --foreground: var(--eerie-black);
+    --accent: var(--midnight-green);
     --border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: var(--eerie-black);
+        --foreground: var(--slate-gray-800);
+        --accent: var(--midnight-green);
+        --border: #27272a;
+    }
 }
 
 @theme inline {
@@ -147,14 +99,7 @@
     --midnight-green-900: #c1ebef;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: var(--eerie-black);
-        --foreground: var(--slate-gray-800);
-        --accent: var(--midnight-green);
-        --border: #27272a;
-    }
-}
+
 
 body {
     background: var(--background);
@@ -178,4 +123,65 @@ body {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+}
+
+
+
+/* JetBrains Mono font faces */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter font faces */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fira Code font faces */
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
