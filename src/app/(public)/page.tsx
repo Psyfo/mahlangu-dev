@@ -2,7 +2,7 @@ import CommandPalette from '@/components/CommandPalette';
 
 import ContactSection from './components/ContactSection';
 import Education from './components/Education';
-import HeroSection from './components/HeroSection';
+import HeroSection2 from './components/HeroSection2';
 import ProfessionalSummary from './components/ProfessionalSummary';
 import Projects from './components/Projects';
 import TechnicalSkills from './components/TechnicalSkills';
@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <CommandPalette />
       <main className='min-h-screen'>
-        <HeroSection />
+        <HeroSection2 />
         <ProfessionalSummary />
         <TechnicalSkills />
         <WorkExperience />
