@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import FloatingLogo from './FloatingLogo';
 import Header from './Header';
 
 function Spinner() {
@@ -47,6 +48,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     <>
       <Header onReady={() => setHeaderReady(true)} />
       {showContent ? children : <Spinner />}
+      <FloatingLogo />
     </>
   );
 }
