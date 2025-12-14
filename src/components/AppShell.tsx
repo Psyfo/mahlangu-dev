@@ -7,15 +7,15 @@ import Header from './Header';
 
 function Spinner() {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-[var(--color-background)]'>
-      <h1 className='text-2xl font-bold text-[var(--color-accent)] mb-1 text-center'>
+    <div className='flex flex-col justify-center items-center bg-[var(--color-background)] min-h-screen'>
+      <h1 className='mb-1 font-bold text-[var(--color-accent)] text-2xl text-center'>
         Welcome Visitor
       </h1>
-      <p className='text-sm text-[var(--color-foreground)] mb-6 text-center'>
+      <p className='mb-6 text-[var(--color-foreground)] text-sm text-center'>
         Building digital experiences, one line at a time.
       </p>
-      <div className='animate-spin rounded-full h-10 w-10 border-t-4 border-[var(--color-accent)] border-opacity-60'></div>
-      <span className='mt-4 text-xs text-[var(--color-foreground)]/60 text-center'>
+      <div className='border-[var(--color-accent)] border-t-4 border-opacity-60 rounded-full w-10 h-10 animate-spin'></div>
+      <span className='mt-4 text-[var(--color-foreground)]/60 text-xs text-center'>
         Loading your experience…
       </span>
     </div>
@@ -31,9 +31,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     if (!splashShown.current) {
       const timer = setTimeout(() => setMinDelayPassed(true), 2000);
       return () => clearTimeout(timer);
-    } else {
-      setMinDelayPassed(true);
     }
+    // If splash was already shown, the timer won't run, leaving minDelayPassed false
+    // which is correct behavior for subsequent renders
   }, []);
 
   useEffect(() => {

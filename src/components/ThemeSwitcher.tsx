@@ -13,11 +13,12 @@ const getInitialTheme = (): 'light' | 'dark' | 'system' => {
 };
 
 export default function ThemeSwitcher({ onReady }: { onReady?: () => void }) {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system' | null>(null);
-
-  useEffect(() => {
-    setTheme(getInitialTheme());
-  }, []);
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system' | null>(() => {
+    if (typeof window !== 'undefined') {
+      return getInitialTheme();
+    }
+    return null;
+  });
 
   useEffect(() => {
     if (!theme) return;
@@ -45,7 +46,7 @@ export default function ThemeSwitcher({ onReady }: { onReady?: () => void }) {
         onChange={(e) =>
           setTheme(e.target.value as 'light' | 'dark' | 'system')
         }
-        className='px-2 py-1 rounded border border-[var(--midnight-green)] bg-[var(--color-background)] text-xs'
+        className='bg-[var(--color-background)] px-2 py-1 border border-[var(--midnight-green)] rounded text-xs'
         aria-label='Switch theme'
       >
         <option value='system'>System</option>
