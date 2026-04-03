@@ -8,12 +8,74 @@ A concise, actionable reference for maintaining visual and verbal consistency ac
 
 - Brand name: Sipho Mahlangu
 - Domain: <https://mahlangu.dev>
-- Primary tagline: “Building digital experiences, one line at a time.”
+- Primary tagline: "Senior Backend Engineer. Distributed Systems. Fintech."
 - Secondary taglines:
-  - “Crafting code for a connected world.”
-  - “Turning ideas into interactive reality.”
+  - "Building the infrastructure where real-time data and financial systems meet."
+  - "High-throughput systems, event-driven architecture, cloud-native execution."
 
-Brand essence: precise, modern, trustworthy, human.
+Brand essence: precise, senior, trustworthy, engineering-led.
+
+---
+
+## 2) Voice and Tone
+
+- Personality: direct, confident, technically credible, understated.
+- Voice principles:
+  - Lead with outcomes and scope, not tools.
+  - Avoid training/teaching framing — this is a practitioner's portfolio.
+  - Active voice; short sentences.
+  - Prefer specificity: "high-throughput event pipelines" over "scalable systems".
+- Tone by context:
+  - Portfolio pages: professional, precise, senior-level.
+  - Contact: open, approachable, recruiter-aware.
+  - Social: concise, honest, technically grounded.
+
+Example bio (short):
+
+- "Senior Backend Engineer building high-throughput distributed systems and event-driven microservices in fintech and cloud-native environments."
+
+---
+
+## 3) Messaging Pillars
+
+- **Depth:** 10+ years of hands-on systems engineering, not breadth-first generalism.
+- **Fintech focus:** Production experience in regulated, high-stakes financial data environments.
+- **Cloud-native:** GCP, Kubernetes, event-driven architecture as default thinking.
+- **AI-augmented:** Practical use of AI tooling to improve engineering velocity — not hype.
+- **Expanding:** Web3 and applied AI systems as intentional next chapter.
+
+Elevator pitch (<= 30 words):
+
+- "I design and operate distributed systems for fintech — real-time data pipelines, event-driven microservices, Kubernetes infrastructure — and I'm moving into applied AI and Web3."
+
+---
+
+## 4) Logo and Marks
+
+- Wordmark: "Mahlangu.dev" set in primary type (see Typography).
+- Icon (optional): simple geometric M or angled chevron motif. Keep line thickness consistent with UI borders.
+- Clear space: at least 1x the cap height around the mark.
+- Minimum size:
+  - Wordmark: ≥ 120px width on web.
+  - Icon: ≥ 24px square.
+
+Do
+
+- Use single-color versions for simplicity.
+- Keep contrast high against background.
+
+Don't
+
+- Distort, rotate, or apply complex effects.
+- Place on busy backgrounds without sufficient contrast.
+
+File suggestions:
+
+- /public/brand/logo-dark.svg
+- /public/brand/logo-light.svg
+- /public/brand/icon.svg
+
+---
 
 ---
 

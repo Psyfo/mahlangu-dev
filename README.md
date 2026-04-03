@@ -1,6 +1,40 @@
-# Sipho Omotola Mahlangu Portfolio
+# mahlangu.dev
 
-Welcome to the personal portfolio of Sipho Omotola Mahlangu, showcasing expertise in full stack development, data science, cloud architecture, and technical training.
+Personal portfolio of **Sipho Omotola Mahlangu** — Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech environments.
+
+## Sections
+
+- **Hero** — Name, title, and positioning tags
+- **Professional Summary** — Career narrative and focus areas
+- **Technical Skills** — Categorized by domain: backend, cloud, data, frontend, AI productivity
+- **Work Experience** — Roles at BCB Group, Self-Employed, Midlands State University, Mobisynco
+- **Areas of Interest** — Applied AI, Web3, and Fintech systems engineering
+- **Education** — BTech & ND in IT, Certifications
+- **Contact** — Email, LinkedIn, GitHub, phone
+- **Command Palette** — Keyboard navigation via Ctrl+K / Cmd+K
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **cmdk**
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Contact
+
+- **Email:** [omotola@afrogenitor.com](mailto:omotola@afrogenitor.com)
+- **LinkedIn:** [sipho-mahlangu](https://www.linkedin.com/in/sipho-mahlangu/)
+- **GitHub:** [github.com/Psyfo](https://github.com/Psyfo)
 
 ## 🚀 Features
 

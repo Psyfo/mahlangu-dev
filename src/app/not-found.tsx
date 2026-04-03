@@ -6,19 +6,20 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-[var(--color-background)]'>
-      <h1 className='text-3xl font-bold text-[var(--color-accent)] mb-2'>
-        404 – Page Not Found
+    <div className='flex flex-col justify-center items-center bg-[var(--color-background)] min-h-screen'>
+      <h1 className='mb-2 font-bold text-[var(--color-accent)] text-3xl'>
+        404 – Not Found
       </h1>
-      <p className='text-base text-center text-[var(--color-foreground)] mb-6'>
-        Oops! The page you’re looking for doesn’t exist.
+      <p className='mb-6 text-[var(--color-foreground)] text-base text-center'>
+        This page doesn&apos;t exist.
         <br />
-        Let&apos;s get you back{' '}
-        <Link href='/' className='underline text-[var(--color-accent)]'>
+        Head back{' '}
+        <Link href='/' className='text-[var(--color-accent)] underline'>
           home
-        </Link>{' '}
+        </Link>
+        .
       </p>
-      <div className='animate-spin rounded-full h-8 w-8 border-t-4 border-[var(--color-accent)] border-opacity-60'></div>
+      <div className='border-[var(--color-accent)] border-t-4 border-opacity-60 rounded-full w-8 h-8 animate-spin'></div>
     </div>
   );
 }

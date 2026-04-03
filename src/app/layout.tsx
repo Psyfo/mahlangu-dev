@@ -4,63 +4,74 @@ import Script from 'next/script';
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Sipho Mahlangu - Software Development Services',
+  '@type': 'Person',
+  name: 'Sipho Omotola Mahlangu',
   url: 'https://mahlangu.dev',
   image: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
-  //   logo: 'https://mahlangu.dev/images/logo_mrbuild.svg',
   description:
-    'Professional web development, cloud solutions, and data-driven software services for businesses and individuals worldwide.',
-  founder: {
-    '@type': 'Person',
-    name: 'Sipho Omotola Mahlangu',
-    sameAs: [
-      'https://www.linkedin.com/in/sipho-mahlangu/',
-      'https://github.com/Psyfo',
-    ],
+    'Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech environments.',
+  jobTitle: 'Senior Backend Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'BCB Group',
   },
   address: {
     '@type': 'PostalAddress',
+    addressLocality: 'Cape Town',
     addressCountry: 'ZA',
   },
-  areaServed: 'Worldwide',
-  serviceType: [
-    'Custom Web Applications',
-    'Cloud Architecture & Deployment',
-    'Data Analytics Solutions',
-    'API Development & Integration',
+  sameAs: [
+    'https://www.linkedin.com/in/sipho-mahlangu/',
+    'https://github.com/Psyfo',
+  ],
+  knowsAbout: [
+    'Node.js',
+    'NestJS',
+    'Distributed Systems',
+    'Microservices',
+    'Event-Driven Architecture',
+    'Google Cloud Platform',
+    'Kubernetes',
+    'Fintech',
+    'PostgreSQL',
+    'TypeScript',
   ],
 };
 
 export const metadata = {
   metadataBase: new URL('https://mahlangu.dev'),
-  title: 'Sipho Mahlangu - Professional Web & Software Development Services',
+  title:
+    'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
   description:
-    'Offering tailored web applications, cloud architecture, and data analytics solutions to help businesses scale and succeed.',
+    'Senior Backend / Platform Engineer with 10+ years building high-throughput distributed systems and event-driven microservices in fintech and cloud-native environments.',
   keywords: [
-    'Software Development Services',
-    'Web Applications',
-    'Cloud Solutions',
-    'API Integration',
-    'Data Analytics',
+    'Senior Backend Engineer',
+    'Platform Engineer',
+    'Distributed Systems',
+    'Fintech Engineer',
+    'NestJS',
+    'Node.js',
+    'Kubernetes',
+    'Google Cloud',
+    'Event-Driven Architecture',
+    'Microservices',
     'Sipho Omotola Mahlangu',
     'Sipho Mahlangu',
-    'Sipho',
-    'Mahlangu',
-    'Omotola',
+    'mahlangu.dev',
   ],
   openGraph: {
-    title: 'Sipho Mahlangu | Professional Web & Software Development Services',
+    title:
+      'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
     description:
-      'High-quality software solutions including web apps, cloud architecture, and data analytics for businesses worldwide.',
+      'Senior Backend / Platform Engineer specializing in high-throughput distributed systems, event-driven microservices, and cloud-native infrastructure.',
     url: 'https://mahlangu.dev',
-    siteName: 'Sipho Mahlangu | Software Development Services',
+    siteName: 'Sipho Mahlangu',
     images: [
       {
         url: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sipho Mahlangu | Software Development Services',
+        alt: 'Sipho Mahlangu — Senior Backend Engineer',
       },
     ],
     locale: 'en_US',
@@ -68,10 +79,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sipho Mahlangu | Web & Software Development Services',
+    title:
+      'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
     description:
-      'Custom web applications, cloud solutions, and data analytics for businesses worldwide.',
-    images: ['https://mahlangu.dev/images/hero_portrait.jpg'],
+      'Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech.',
+    images: ['https://mahlangu.dev/images/hero_portrait_2.jpg'],
   },
 };
 
