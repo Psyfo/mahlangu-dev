@@ -1,24 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-
-const getInitialTheme = (): 'light' | 'dark' | 'system' => {
-  if (typeof window !== 'undefined') {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light' || saved === 'dark' || saved === 'system') {
-      return saved;
-    }
-  }
-  return 'system';
-};
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function ThemeSwitcher({ onReady }: { onReady?: () => void }) {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system' | null>(() => {
-    if (typeof window !== 'undefined') {
-      return getInitialTheme();
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system' | null>(null);
+  const calledReady = useRef(false);
+
+  // Read localStorage only after mount to avoid hydration mismatch
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark' || saved === 'system') {
+      setTheme(saved);
+    } else {
+      setTheme('system');
     }
-    return null;
-  });
+  }, []);
 
   useEffect(() => {
     if (!theme) return;
@@ -28,14 +24,13 @@ export default function ThemeSwitcher({ onReady }: { onReady?: () => void }) {
       document.documentElement.setAttribute('data-theme', theme);
     }
     localStorage.setItem('theme', theme);
-    if (onReady) {
-      console.log('ThemeSwitcher calling onReady');
+    if (onReady && !calledReady.current) {
+      calledReady.current = true;
       onReady();
     }
-  }, [theme, onReady]);
+  }, [theme]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!theme) {
-    console.log('ThemeSwitcher: theme not set, returning null');
     return null;
   }
 
