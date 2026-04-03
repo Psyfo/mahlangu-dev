@@ -11,13 +11,13 @@ export default function ContactSection() {
     <section
       ref={ref}
       id='contact'
-      className='max-w-2xl mx-auto px-6 py-16 text-center border-t border-[var(--color-border)]'
+      className='mx-auto px-6 py-16 border-[var(--color-border)] border-t max-w-2xl text-center'
     >
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-2xl font-bold mb-6'
+        className='mb-6 font-bold text-2xl'
       >
         Get in Touch
       </motion.h2>
@@ -25,19 +25,19 @@ export default function ContactSection() {
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-        className='text-lg mb-8'
+        className='mb-8 text-lg'
       >
         Whether you&apos;re looking to collaborate, build something awesome, or
         just say hello — my inbox is always open.
       </motion.p>
 
-      <div className='flex flex-col gap-4 items-center justify-center font-[var(--font-cmd)] text-sm'>
+      <div className='flex flex-col justify-center items-center gap-4 font-[var(--font-cmd)] text-sm'>
         {[
           {
             type: 'email',
-            value: 'omotola@featnode.tech',
-            href: 'mailto:omotola@featnode.tech',
-            label: 'omotola@featnode.tech',
+            value: 'omotola@afrogenitor.com',
+            href: 'mailto:omotola@afrogenitor.com',
+            label: 'omotola@afrogenitor.com',
           },
           {
             type: 'email',
@@ -76,7 +76,7 @@ export default function ContactSection() {
               href={item.href}
               target={item.type !== 'email' ? '_blank' : undefined}
               rel={item.type !== 'email' ? 'noopener noreferrer' : undefined}
-              className='hover:underline text-[var(--color-accent)]'
+              className='text-[var(--color-accent)] hover:underline'
               initial={{ x: -40, opacity: 0 }}
               animate={inView ? { x: 0, opacity: 1 } : {}}
               transition={{
@@ -101,7 +101,7 @@ export default function ContactSection() {
             >
               {item.label}
             </motion.p>
-          )
+          ),
         )}
       </div>
     </section>

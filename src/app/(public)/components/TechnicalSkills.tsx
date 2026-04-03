@@ -3,17 +3,42 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const skills = {
-  'Programming Languages': ['TypeScript', 'Python', 'R', 'C#', 'SQL'],
-  Frameworks: ['Node.js', 'Express', 'Angular', 'Next.js'],
-  'DevOps & Cloud': [
-    'Docker',
-    'Git',
-    'Linux (CentOS, Debian)',
-    'AWS S3',
-    'Azure',
+  'Backend & Systems': [
+    'Node.js',
+    'NestJS',
+    'Express.js',
+    'Microservices',
+    'Event-Driven Architecture',
+    'Distributed Systems',
+    'REST APIs',
+    'GraphQL',
   ],
-  Certifications: ['CompTIA A+', 'Network+', 'MCTS (Windows 7, Server 2008)'],
-  Languages: ['English (Native)'],
+  'Data & Storage': [
+    'PostgreSQL',
+    'MongoDB',
+    'Python',
+    'R',
+    'Data Modeling',
+    'Data Warehousing',
+  ],
+  'Cloud & Infrastructure': [
+    'Google Cloud Platform (Pub/Sub)',
+    'Kubernetes',
+    'Docker',
+    'AWS (S3)',
+    'Azure',
+    'Linux (Debian, CentOS)',
+    'PM2',
+  ],
+  Frontend: ['Next.js', 'React', 'Angular', 'Tailwind CSS'],
+  'AI & Developer Productivity': [
+    'GitHub Copilot',
+    'Cursor',
+    'LLM-Augmented Workflows',
+    'Constraint-Based Prompt Engineering',
+    'AI Agents (Exploratory)',
+  ],
+  Certifications: ['CompTIA A+', 'Network+', 'MCTS'],
 };
 
 export default function TechnicalSkills() {
@@ -24,17 +49,17 @@ export default function TechnicalSkills() {
     <section
       id='technical-skills'
       ref={ref}
-      className='max-w-4xl mx-auto px-6 py-12'
+      className='mx-auto px-6 py-12 max-w-4xl'
     >
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-2xl font-bold mb-4 text-[var(--midnight-green)]'
+        className='mb-4 font-bold text-[var(--midnight-green)] text-2xl'
       >
         Technical Skills
       </motion.h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+      <div className='gap-6 grid grid-cols-1 md:grid-cols-2'>
         {Object.entries(skills).map(([category, items], catIdx) => (
           <motion.div
             key={category}
@@ -46,8 +71,8 @@ export default function TechnicalSkills() {
               delay: 0.3 + catIdx * 0.2,
             }}
           >
-            <h3 className='text-xl font-semibold mb-2'>{category}</h3>
-            <ul className='list-disc list-inside text-[var(--color-foreground)]'>
+            <h3 className='mb-2 font-semibold text-xl'>{category}</h3>
+            <ul className='text-[var(--color-foreground)] list-disc list-inside'>
               {items.map((skill, skillIdx) => (
                 <motion.li
                   key={skill}

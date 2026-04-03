@@ -3,34 +3,34 @@
 import { motion } from 'framer-motion';
 
 const subtitles = [
-  'Software Developer',
-  'Technical Trainer',
-  'Solutions Advisor',
+  'Senior Backend Engineer',
+  'Platform Engineer',
+  'Distributed Systems & Fintech',
 ];
 
 export default function HeroSection() {
   return (
     <section
       id='hero-section'
-      className='w-screen h-screen flex flex-col md:flex-row items-stretch bg-[var(--color-background)] overflow-hidden'
+      className='flex md:flex-row flex-col items-stretch bg-[var(--color-background)] w-screen h-screen overflow-hidden'
     >
       {/* Left: Text Content */}
       <motion.div
         initial={{ x: -30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
-        className='flex flex-col justify-center items-start px-8 py-12 w-full md:w-1/2 h-1/2 md:h-full z-10'
+        className='z-10 flex flex-col justify-center items-start px-8 py-12 w-full md:w-1/2 h-1/2 md:h-full'
       >
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
-          className='text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--color-foreground)] font-cmd mb-6'
+          className='mb-6 font-cmd font-bold text-[var(--color-foreground)] text-4xl sm:text-5xl md:text-6xl'
         >
           Sipho Omotola Mahlangu
         </motion.h1>
         <div className='mt-4 max-w-3xl'>
-          <div className='flex flex-col md:flex-row md:items-center md:gap-3'>
+          <div className='flex md:flex-row flex-col md:items-center md:gap-3'>
             {subtitles.map((line, i) => (
               <motion.span
                 key={line}
@@ -41,7 +41,7 @@ export default function HeroSection() {
                   ease: 'easeOut',
                   delay: 1.1 + i * 0.2, // Stagger each line
                 }}
-                className='text-xl sm:text-xl font-light text-[var(--color-foreground)]/80 font-cmd'
+                className='font-cmd font-light text-[var(--color-foreground)]/80 text-xl sm:text-xl'
               >
                 {line}
                 {/* Pipe separator for desktop, except after last item */}
@@ -61,7 +61,7 @@ export default function HeroSection() {
         initial={{ x: 30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-        className='relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center'
+        className='relative flex justify-center items-center w-full md:w-1/2 h-1/2 md:h-full'
         style={{
           backgroundColor: 'var(--color-background)',
         }}

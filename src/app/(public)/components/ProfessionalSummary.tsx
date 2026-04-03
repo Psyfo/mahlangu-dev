@@ -10,13 +10,13 @@ export default function ProfessionalSummary() {
     <section
       ref={ref}
       id='professional-summary'
-      className='prose dark:prose-invert max-w-3xl mx-auto px-6 py-30 md:py-50'
+      className='dark:prose-invert mx-auto px-6 py-30 md:py-50 max-w-3xl prose'
     >
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='mb-4 font-bold text-2xl text-[var(--midnight-green)]'
+        className='mb-4 font-bold text-[var(--midnight-green)] text-2xl'
       >
         Professional Summary
       </motion.h2>
@@ -26,11 +26,32 @@ export default function ProfessionalSummary() {
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
         className='text-lg md:text-xl'
       >
-        Full Stack Developer with 8+ years of expertise in Node.js, Angular, and
-        cloud architecture, now enhancing data-driven decision-making through
-        Python/R analytics. Built 10+ scalable web applications and trained 200+
-        students in Data Science and modern programming. Enthusiastic about
-        bridging technical innovation with measurable business impact.
+        Senior Backend / Platform Engineer with 10+ years of experience
+        designing and operating high-throughput, distributed systems in fintech
+        and cloud-native environments.
+      </motion.p>
+      <motion.p
+        initial={{ y: 40, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+        className='text-lg md:text-xl'
+      >
+        Specializes in event-driven microservices (Node.js, NestJS) running on
+        real-time data pipelines, and Kubernetes-based infrastructure on Google
+        Cloud. Proven ability to build scalable, reliable systems and optimize
+        engineering workflows using modern tooling, including AI-assisted
+        development.
+      </motion.p>
+      <motion.p
+        initial={{ y: 40, opacity: 0 }}
+        animate={inView ? { y: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
+        className='text-lg md:text-xl'
+      >
+        Background in data science and technical education, combining strong
+        systems design with analytical problem-solving. Expanding focus into
+        Web3 and AI-driven systems, particularly where they intersect with
+        distributed architectures and real-time data.
       </motion.p>
     </section>
   );

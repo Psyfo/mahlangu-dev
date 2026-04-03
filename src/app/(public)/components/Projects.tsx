@@ -5,10 +5,10 @@ import { useRef } from 'react';
 
 const projects = [
   {
-    name: 'Academic Workload Management System',
+    name: 'Workload Management System',
     stack: 'Express.js, MongoDB, Angular, GraphQL',
     description:
-      'Improved scheduling and reporting for university workloads by 30%.',
+      'GraphQL-backed scheduling and reporting system; improved operational workload management efficiency by 30%.',
   },
   {
     name: 'Carina Pereira Cosmetics Academy',
@@ -45,12 +45,12 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: '-50%' });
 
   return (
-    <section ref={ref} id='projects' className='max-w-4xl mx-auto px-6 py-12'>
+    <section ref={ref} id='projects' className='mx-auto px-6 py-12 max-w-4xl'>
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-2xl font-bold mb-4 text-[var(--midnight-green)]'
+        className='mb-4 font-bold text-[var(--midnight-green)] text-2xl'
       >
         Projects
       </motion.h2>
@@ -66,8 +66,8 @@ export default function Projects() {
               delay: 0.3 + i * 0.2,
             }}
           >
-            <h3 className='text-xl font-semibold'>{name}</h3>
-            <p className='text-sm text-gray-500'>{stack}</p>
+            <h3 className='font-semibold text-xl'>{name}</h3>
+            <p className='text-gray-500 text-sm'>{stack}</p>
             <p className='mt-1'>{description}</p>
           </motion.div>
         ))}

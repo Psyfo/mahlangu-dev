@@ -5,88 +5,51 @@ import { useRef } from 'react';
 
 const jobs = [
   {
+    title: 'Senior Backend Engineer',
+    company: 'BCB Group',
+    duration: 'Nov 2025 – Present',
+    location: 'Remote',
+    description: [
+      'Own a core data aggregation domain, building scalable microservices to ingest, process, and distribute high-throughput, real-time streaming data from multiple external providers across distributed systems.',
+      'Implement cloud-native, event-driven architecture using Google Cloud (Pub/Sub, Kubernetes).',
+      'Develop and maintain services using NestJS and PostgreSQL, ensuring reliability and performance in production environments.',
+    ],
+  },
+  {
+    title: 'Backend / Full Stack Engineer (Contract-Based)',
+    company: 'Self-Employed',
+    duration: 'Jan 2022 – Nov 2025',
+    location: 'Remote',
+    description: [
+      'Delivered contract-based engineering solutions for startups and SMEs across multiple domains.',
+      'Designed and deployed full-stack applications using Next.js and Node.js for production environments.',
+      'Built scalable backend services and APIs supporting business-critical workflows.',
+      'Integrated cloud infrastructure (AWS S3, Azure, Backblaze) for reliable and scalable systems.',
+      'Implemented analytics solutions (GA4, Python, R) enabling data-driven decision-making.',
+      'Built SEO-optimized platforms improving traffic acquisition and conversion performance.',
+      'Incorporated AI-assisted development workflows (GitHub Copilot, Cursor) using constraint-driven approaches to improve code generation quality and development speed.',
+    ],
+  },
+  {
     title: 'Data Science Lecturer',
     company: 'Midlands State University',
-    duration: 'Sep 2024 – Present',
+    duration: 'Sep 2024 – Aug 2025',
     location: 'Gweru, Zimbabwe',
     description: [
-      'Lectured 100+ tertiary students in Data Science modules including R Programming, Computer Vision, Advanced Data Warehousing, and Data Mining.',
+      'Delivered applied instruction in Data Science, R Programming, Computer Vision, and Data Warehousing.',
+      'Mentored 100+ students in analytical problem-solving and software engineering practices.',
+      'Designed curriculum bridging statistical theory with real-world system implementation.',
     ],
   },
   {
-    title: 'Freelance Full Stack Developer',
-    company: 'Self-Employed',
-    duration: 'Jan 2022 – Present',
-    location: 'Remote',
-    description: [
-      'Delivered web and mobile solutions for clients in fashion, healthcare, education, and professional services.',
-      'Developed the Lukhanyo Mdingi Archive Website (Shopify Liquid).',
-      'Built the Carina Pereira Portfolio Website using Next.js and GA4.',
-      'Created MVPs and tools using Node.js, Angular, and MongoDB.',
-      'Integrated cloud services (AWS S3, Azure) and analytics tools.',
-    ],
-  },
-  {
-    title: 'Full Stack Developer (Contract)',
-    company: 'E2E Enterprises',
-    duration: '2023 – 2024',
-    location: 'Remote',
-    description: [
-      'Built an MVP for a healthcare booking web app using Node.js, MongoDB, and Angular.',
-      'Enabled patients to book appointments with nearby doctors through a responsive UI.',
-    ],
-  },
-  {
-    title: 'Web Developer (Contract)',
-    company: 'Lukhanyo Mdingi Fashion',
-    duration: 'Aug 2023 – Feb 2024',
-    location: 'Remote',
-    description: [
-      'Developed a Shopify-integrated archive website using Shopify Liquid, HTML/CSS, and JavaScript.',
-      'Enhanced brand visibility with curated galleries and e-commerce functionality.',
-    ],
-  },
-  {
-    title: 'Tech Solutions Advisor & Software Developer',
+    title: 'Software Developer',
     company: 'Mobisynco',
     duration: 'Jan 2017 – Dec 2021',
     location: 'Durban, South Africa',
     description: [
-      'Delivered custom web solutions (Node.js, Angular) for SMEs.',
-      'Managed cloud platforms (CentOS, Debian).',
-      'Configured e-commerce setups and heavily modified Shopify themes.',
-    ],
-  },
-  {
-    title: 'Part-time Teaching Assistant',
-    company: 'Durban University of Technology',
-    duration: '2017 – 2018',
-    location: 'Durban, South Africa',
-    description: [
-      'Tutored C#/.NET and software development courses.',
-      'Managed Moodle classes and online invigilation.',
-      'Designed a prototype workload management system (Node.js, GraphQL, MongoDB).',
-    ],
-  },
-  {
-    title: 'Tech Startup Advisor',
-    company: 'Delyvr',
-    duration: '2017 – 2018',
-    location: 'Remote',
-    description: [
-      'Co-planned pitch decks and secured angel investment.',
-      'Configured Azure cloud infrastructure for MVP development.',
-    ],
-  },
-  {
-    title: 'Exam Center Facilitator & IT Trainer',
-    company: 'Multimedia Tecknowledge',
-    duration: 'Aug 2008 – Dec 2013',
-    location: 'Bulawayo, Zimbabwe',
-    description: [
-      'Trained candidates in Microsoft Server and CompTIA certifications, achieving 95% pass rate.',
-      'Maintained Prometric/Pearson VUE testing center with 99.9% uptime.',
-      'Built in-house lab infrastructure using Microsoft Active Directory.',
+      'Developed and maintained full-stack systems using Node.js and Angular.',
+      'Managed deployment and operation of cloud-hosted Linux environments.',
+      'Delivered e-commerce and business platforms supporting SME operations.',
     ],
   },
 ];
@@ -99,13 +62,13 @@ export default function WorkExperience() {
     <section
       id='work-experience'
       ref={ref}
-      className='max-w-4xl mx-auto px-6 py-12'
+      className='mx-auto px-6 py-12 max-w-4xl'
     >
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-2xl font-bold mb-6 text-[var(--midnight-green)]'
+        className='mb-6 font-bold text-[var(--midnight-green)] text-2xl'
       >
         Work Experience
       </motion.h2>
@@ -122,13 +85,13 @@ export default function WorkExperience() {
                 delay: 0.3 + jobIdx * 0.3,
               }}
             >
-              <h3 className='text-xl font-semibold'>
+              <h3 className='font-semibold text-xl'>
                 {title} — {company}
               </h3>
-              <p className='text-sm text-gray-500'>
+              <p className='text-gray-500 text-sm'>
                 {location} | {duration}
               </p>
-              <ul className='list-disc list-inside mt-2 text-[var(--color-foreground)]'>
+              <ul className='mt-2 text-[var(--color-foreground)] list-disc list-inside'>
                 {description.map((point, i) => (
                   <motion.li
                     key={i}
@@ -145,7 +108,7 @@ export default function WorkExperience() {
                 ))}
               </ul>
             </motion.div>
-          )
+          ),
         )}
       </div>
     </section>

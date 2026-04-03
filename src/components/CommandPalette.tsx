@@ -8,7 +8,7 @@ const sections = [
   { id: 'professional-summary', label: 'Professional Summary' },
   { id: 'technical-skills', label: 'Technical Skills' },
   { id: 'work-experience', label: 'Work Experience' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'interests', label: 'Areas of Interest' },
   { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -48,11 +48,11 @@ export default function CommandPalette() {
       open={open}
       onOpenChange={setOpen}
       label='Command Palette'
-      className='fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-md z-50 bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg shadow-lg'
+      className='top-20 left-1/2 z-50 fixed bg-[var(--color-background)] shadow-lg border border-[var(--color-border)] rounded-lg w-full max-w-md -translate-x-1/2'
     >
       <Command.Input
         placeholder='Type to navigate…'
-        className='w-full px-4 py-3 border-b border-[var(--color-border)] bg-transparent outline-none'
+        className='bg-transparent px-4 py-3 border-[var(--color-border)] border-b outline-none w-full'
       />
       <Command.List>
         {sections.map((section) => (
@@ -60,7 +60,7 @@ export default function CommandPalette() {
             key={section.id}
             value={section.label}
             onSelect={() => handleSelect(section.id)}
-            className='px-4 py-2 cursor-pointer hover:bg-[var(--color-accent)]/10'
+            className='hover:bg-[var(--color-accent)]/10 px-4 py-2 cursor-pointer'
           >
             {section.label}
           </Command.Item>
