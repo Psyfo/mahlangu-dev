@@ -3,21 +3,48 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
+const contacts = [
+  {
+    type: 'email',
+    label: 'omotola@afrogenitor.com',
+    href: 'mailto:omotola@afrogenitor.com',
+    note: 'General & Recruitment',
+  },
+  {
+    type: 'linkedin',
+    label: 'linkedin.com/in/sipho-mahlangu',
+    href: 'https://www.linkedin.com/in/sipho-mahlangu/',
+    note: 'Connect',
+  },
+  {
+    type: 'github',
+    label: 'github.com/Psyfo',
+    href: 'https://github.com/Psyfo',
+    note: 'Work',
+  },
+  {
+    type: 'phone',
+    label: '+27 84 731 6783',
+    href: 'tel:+27847316783',
+    note: 'Cape Town, ZA',
+  },
+];
+
 export default function ContactSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.7 });
+  const inView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
     <section
       ref={ref}
       id='contact'
-      className='mx-auto px-6 py-16 border-[var(--color-border)] border-t max-w-2xl text-center'
+      className='mx-auto px-6 py-20 border-[var(--color-border)] border-t max-w-2xl'
     >
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='mb-6 font-bold text-2xl'
+        className='mb-3 font-bold text-[var(--midnight-green)] text-2xl'
       >
         Get in Touch
       </motion.h2>
@@ -25,84 +52,41 @@ export default function ContactSection() {
         initial={{ y: 40, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-        className='mb-8 text-lg'
+        className='mb-10 text-[var(--color-foreground)]/70 text-base'
       >
-        Whether you&apos;re looking to collaborate, build something awesome, or
-        just say hello — my inbox is always open.
+        Open to senior engineering roles, contract work, and technical
+        collaborations — particularly in fintech, distributed systems, and
+        AI-applied product engineering. Recruiters welcome.
       </motion.p>
 
-      <div className='flex flex-col justify-center items-center gap-4 font-[var(--font-cmd)] text-sm'>
-        {[
-          {
-            type: 'email',
-            value: 'omotola@afrogenitor.com',
-            href: 'mailto:omotola@afrogenitor.com',
-            label: 'omotola@afrogenitor.com',
-          },
-          {
-            type: 'email',
-            value: 'omotolamahlangu@gmail.com',
-            href: 'mailto:omotolamahlangu@gmail.com',
-            label: 'omotolamahlangu@gmail.com',
-          },
-          {
-            type: 'linkedin',
-            value: 'LinkedIn → sipho-mahlangu',
-            href: 'https://www.linkedin.com/in/sipho-mahlangu/',
-            label: 'LinkedIn → sipho-mahlangu',
-          },
-          {
-            type: 'github',
-            value: 'GitHub → @Psyfo',
-            href: 'https://github.com/Psyfo',
-            label: 'GitHub → @Psyfo',
-          },
-          {
-            type: 'phone',
-            value: '📞 +27 84 731 6783',
-            href: '',
-            label: '📞 +27 84 731 6783',
-          },
-          {
-            type: 'phone',
-            value: '📞 +263 776 092 688',
-            href: '',
-            label: '📞 +263 776 092 688',
-          },
-        ].map((item, i) =>
-          item.href ? (
-            <motion.a
-              key={item.value}
-              href={item.href}
-              target={item.type !== 'email' ? '_blank' : undefined}
-              rel={item.type !== 'email' ? 'noopener noreferrer' : undefined}
-              className='text-[var(--color-accent)] hover:underline'
-              initial={{ x: -40, opacity: 0 }}
-              animate={inView ? { x: 0, opacity: 1 } : {}}
-              transition={{
-                duration: 0.3,
-                ease: 'easeOut',
-                delay: 0.4 + i * 0.15,
-              }}
-            >
-              {item.label}
-            </motion.a>
-          ) : (
-            <motion.p
-              key={item.value}
-              className='text-[var(--color-foreground)]'
-              initial={{ x: -40, opacity: 0 }}
-              animate={inView ? { x: 0, opacity: 1 } : {}}
-              transition={{
-                duration: 0.3,
-                ease: 'easeOut',
-                delay: 0.4 + i * 0.15,
-              }}
-            >
-              {item.label}
-            </motion.p>
-          ),
-        )}
+      <div className='flex flex-col gap-3'>
+        {contacts.map(({ type, label, href, note }, i) => (
+          <motion.a
+            key={label}
+            href={href}
+            target={type !== 'email' && type !== 'phone' ? '_blank' : undefined}
+            rel={
+              type !== 'email' && type !== 'phone'
+                ? 'noopener noreferrer'
+                : undefined
+            }
+            initial={{ x: -30, opacity: 0 }}
+            animate={inView ? { x: 0, opacity: 1 } : {}}
+            transition={{
+              duration: 0.35,
+              ease: 'easeOut',
+              delay: 0.35 + i * 0.12,
+            }}
+            className='group flex justify-between items-center hover:bg-[var(--color-accent)]/5 px-4 py-3 border border-[var(--color-border)] hover:border-[var(--color-accent)] rounded transition-colors duration-200'
+          >
+            <span className='font-cmd text-[var(--color-accent)] text-sm group-hover:underline'>
+              {label}
+            </span>
+            <span className='font-cmd text-[var(--color-foreground)]/50 text-xs'>
+              {note}
+            </span>
+          </motion.a>
+        ))}
       </div>
     </section>
   );
