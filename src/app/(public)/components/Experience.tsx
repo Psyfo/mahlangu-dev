@@ -62,7 +62,7 @@ export default function Experience() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className='mt-6 text-[var(--color-foreground)]/50 text-sm'
       >
-        The full history lives on{' '}
+        Full history on{' '}
         <a
           href='https://www.linkedin.com/in/sipho-mahlangu/'
           target='_blank'
@@ -70,8 +70,8 @@ export default function Experience() {
           className='text-[var(--color-accent)] hover:underline'
         >
           LinkedIn
-        </a>{' '}
-        — this site is about who I am and how to reach me.
+        </a>
+        {' '}— or get in touch to request a CV.
       </motion.p>
     </section>
   );
