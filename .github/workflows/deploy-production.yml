@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
@@ -20,7 +22,15 @@ jobs:
           cache: 'npm'
 
       - name: Install Doppler CLI
-        run: curl -Ls https://cli.doppler.com/install.sh | sh
+        run: (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
+
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
 
       - name: Setup SSH
         env:
@@ -36,10 +46,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clear persisted data cache (keep compiler caches)
+        run: rm -rf .next/cache/fetch-cache .next/cache/fetch-cache-tags-manifest.json
+
       - name: Build (with Doppler secrets injected)
         run: doppler run -- npm run build
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN_MAHLANGU_PROD }}
+          NEXT_TELEMETRY_DISABLED: '1'
+
+      - name: Install rsync
+        run: sudo apt-get install -y rsync
 
       - name: Sync files to VPS
         env:
@@ -63,14 +80,11 @@ jobs:
             "${VPS_USER}@${VPS_HOST}:~/mahlangu-dev/"
 
       - name: Restart application
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          fingerprint: ${{ secrets.VPS_SSH_FINGERPRINT }}
-          script: |
-            cd ~/mahlangu-dev
-            npm ci --omit=dev
-            pm2 reload mahlangu-dev --update-env
-            pm2 save
+        env:
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=yes \
+            "${VPS_USER}@${VPS_HOST}" \
+            'cd ~/mahlangu-dev && npm ci --omit=dev && pm2 reload mahlangu-dev --update-env && pm2 save'
