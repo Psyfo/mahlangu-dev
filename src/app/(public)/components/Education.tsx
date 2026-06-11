@@ -1,59 +1,53 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+
+import SectionHeading from './SectionHeading';
+
+const items = [
+  {
+    degree: 'BTech in Information Technology',
+    school: 'Durban University of Technology',
+    award: 'Distinction',
+  },
+  {
+    degree: 'ND in Information Technology',
+    school: 'Durban University of Technology',
+    award: 'Distinction + Merit Award',
+  },
+  {
+    degree: 'Certifications',
+    school: 'CompTIA A+, Network+, MCTS',
+    award: '',
+  },
+];
 
 export default function Education() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-50%' });
-
   return (
-    <section ref={ref} id='education' className='mx-auto px-6 py-12 max-w-4xl'>
-      <motion.h2
-        initial={{ y: 40, opacity: 0 }}
-        animate={inView ? { y: 0, opacity: 1 } : {}}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='mb-4 font-bold text-[var(--midnight-green)] text-2xl' // midnight green
-      >
-        Education
-      </motion.h2>
+    <section id='education' className='mx-auto px-6 py-12 max-w-4xl'>
+      <SectionHeading>Education</SectionHeading>
       <ul className='space-y-4'>
-        {[
-          {
-            degree: 'BTech in Information Technology',
-            school: 'Durban University of Technology',
-            award: 'Distinction',
-          },
-          {
-            degree: 'ND in Information Technology',
-            school: 'Durban University of Technology',
-            award: 'Distinction + Merit Award',
-          },
-          {
-            degree: 'Certifications',
-            school: 'CompTIA A+, Network+, MCTS',
-            award: '',
-          },
-        ].map((item, i) => (
+        {items.map((item, i) => (
           <motion.li
             key={item.degree + item.school}
-            initial={{ x: -40, opacity: 0 }}
-            animate={inView ? { x: 0, opacity: 1 } : {}}
-            transition={{
-              duration: 0.3,
-              ease: 'easeOut',
-              delay: 0.4 + i * 0.2,
-            }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
           >
-            <strong>{item.degree}</strong>
+            <strong className='text-[var(--color-foreground)]'>
+              {item.degree}
+            </strong>
             <br />
-            {item.school}
-            {item.award && (
-              <>
-                {' '}
-                — <em>{item.award}</em>
-              </>
-            )}
+            <span className='text-[var(--color-foreground)]/70'>
+              {item.school}
+              {item.award && (
+                <>
+                  {' '}
+                  — <em className='text-[var(--color-accent)]'>{item.award}</em>
+                </>
+              )}
+            </span>
           </motion.li>
         ))}
       </ul>

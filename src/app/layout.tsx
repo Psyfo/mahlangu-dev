@@ -9,12 +9,8 @@ const structuredData = {
   url: 'https://mahlangu.dev',
   image: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
   description:
-    'Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech environments.',
-  jobTitle: 'Senior Backend Engineer',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'BCB Group',
-  },
+    'Senior Full Stack Engineer specializing in distributed systems, event-driven architectures, and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
+  jobTitle: 'Senior Full Stack Engineer',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Cape Town',
@@ -25,45 +21,53 @@ const structuredData = {
     'https://github.com/Psyfo',
   ],
   knowsAbout: [
+    'AI Engineering',
+    'Agentic Systems',
+    'LLM Workflows',
+    'Retrieval-Augmented Generation',
+    'Model Context Protocol',
+    'Distributed Systems',
+    'Event-Driven Architecture',
+    'Microservices',
     'Node.js',
     'NestJS',
-    'Distributed Systems',
-    'Microservices',
-    'Event-Driven Architecture',
-    'Google Cloud Platform',
-    'Kubernetes',
-    'Fintech',
-    'PostgreSQL',
     'TypeScript',
+    'Kubernetes',
+    'Google Cloud Platform',
+    'PostgreSQL',
   ],
 };
 
+// Applies a saved explicit theme before first paint to avoid a flash
+const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`;
+
 export const metadata = {
   metadataBase: new URL('https://mahlangu.dev'),
-  title:
-    'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
+  title: 'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
   description:
-    'Senior Backend / Platform Engineer with 10+ years building high-throughput distributed systems and event-driven microservices in fintech and cloud-native environments.',
+    'Senior Full Stack Engineer with 10+ years building high-throughput distributed systems — now focused on AI-enabled applications, agentic systems, and intelligent software architectures.',
   keywords: [
-    'Senior Backend Engineer',
-    'Platform Engineer',
+    'Senior Full Stack Engineer',
+    'AI Engineer',
+    'AI Engineering',
+    'Agentic Systems',
+    'LLM Workflows',
     'Distributed Systems',
-    'Fintech Engineer',
+    'Event-Driven Architecture',
+    'Microservices',
     'NestJS',
     'Node.js',
     'Kubernetes',
     'Google Cloud',
-    'Event-Driven Architecture',
-    'Microservices',
     'Sipho Omotola Mahlangu',
     'Sipho Mahlangu',
     'mahlangu.dev',
   ],
   openGraph: {
     title:
-      'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
+      'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
     description:
-      'Senior Backend / Platform Engineer specializing in high-throughput distributed systems, event-driven microservices, and cloud-native infrastructure.',
+      'Senior Full Stack Engineer specializing in distributed systems and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
     url: 'https://mahlangu.dev',
     siteName: 'Sipho Mahlangu',
     images: [
@@ -71,7 +75,7 @@ export const metadata = {
         url: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sipho Mahlangu — Senior Backend Engineer',
+        alt: 'Sipho Mahlangu — Senior Full Stack Engineer',
       },
     ],
     locale: 'en_US',
@@ -80,9 +84,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Sipho Mahlangu — Senior Backend Engineer | Distributed Systems & Fintech',
+      'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
     description:
-      'Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech.',
+      'Senior Full Stack Engineer specializing in distributed systems and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
     images: ['https://mahlangu.dev/images/hero_portrait_2.jpg'],
   },
 };
@@ -96,6 +100,7 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <link rel='canonical' href='https://mahlangu.dev' />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
