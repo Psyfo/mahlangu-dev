@@ -4,14 +4,15 @@ Personal portfolio of **Sipho Omotola Mahlangu** — Senior Backend / Platform E
 
 ## Sections
 
-- **Hero** — Name, title, and positioning tags
-- **Professional Summary** — Career narrative and focus areas
-- **Technical Skills** — Categorized by domain: backend, cloud, data, frontend, AI productivity
-- **Work Experience** — Roles at BCB Group, Self-Employed, Midlands State University, Mobisynco
-- **Areas of Interest** — Applied AI, Web3, and Fintech systems engineering
-- **Education** — BTech & ND in IT, Certifications
-- **Contact** — Email, LinkedIn, GitHub, phone
-- **Command Palette** — Keyboard navigation via Ctrl+K / Cmd+K
+- **Hero**: name, title, and positioning tags
+- **About**: career narrative and focus areas
+- **Technical Skills**: categorized by domain (backend, AI engineering, cloud, data, frontend)
+- **Experience**: role history with focus lines
+- **Projects**: featured work (BYO Pulse, with a device showcase board)
+- **Areas of Interest**: AI engineering, distributed systems, personal curiosities
+- **Education**: degrees and certifications
+- **Contact**: email form, LinkedIn, GitHub
+- **Command Palette**: keyboard navigation via Ctrl+K / Cmd+K
 
 ## Tech Stack
 
