@@ -134,19 +134,8 @@ const projects: Project[] = [
         sub: 'film production',
         href: 'https://watchdogmedia.co.za',
       },
-      {
-        label: 'mobisynco.com',
-        sub: 'industrial engineering',
-        href: 'https://mobisynco.com',
-      },
     ],
-    tags: [
-      'beauty',
-      'fashion e-commerce',
-      'healthcare',
-      'film production',
-      'industrial',
-    ],
+    tags: ['beauty', 'fashion e-commerce', 'healthcare', 'film production'],
   },
 ];
 
