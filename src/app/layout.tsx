@@ -72,10 +72,10 @@ export const metadata = {
     siteName: 'Sipho Mahlangu',
     images: [
       {
-        url: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
+        url: 'https://mahlangu.dev/images/og-card.png',
         width: 1200,
         height: 630,
-        alt: 'Sipho Mahlangu — Senior Full Stack Engineer',
+        alt: 'Sipho Mahlangu, Senior Full Stack Engineer: AI Engineering, Agentic Systems, Distributed Systems',
       },
     ],
     locale: 'en_US',
@@ -87,7 +87,7 @@ export const metadata = {
       'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
     description:
       'Senior Full Stack Engineer specializing in distributed systems and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
-    images: ['https://mahlangu.dev/images/hero_portrait_2.jpg'],
+    images: ['https://mahlangu.dev/images/og-card.png'],
   },
 };
 
