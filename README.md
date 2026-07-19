@@ -90,3 +90,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 > Built and maintained by Sipho Omotola Mahlangu.  
 > Feel free to fork, contribute, or reach out for collaboration!
+
+## Hosting
+
+Deployed on [Coolify](https://coolify.mahlangu.dev) (self-hosted), auto-deploying from `master`.
+Migrated 2026-07-19 from a DigitalOcean droplet (PM2 + Caddy + GitHub Actions rsync).
