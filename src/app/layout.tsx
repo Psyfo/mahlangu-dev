@@ -2,6 +2,8 @@ import '../styles/globals.css';
 
 import Script from 'next/script';
 
+import UmamiAnalytics from '@/components/UmamiAnalytics';
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -117,6 +119,7 @@ export default function RootLayout({
             gtag('config', 'G-KZTX3JBNBR');
           `}
         </Script>
+        <UmamiAnalytics />
       </head>
       <body>{children}</body>
     </html>
