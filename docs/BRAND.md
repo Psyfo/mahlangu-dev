@@ -1,373 +1,136 @@
-# Mahlangu.dev Brand Guidelines
+# mahlangu.dev Brand: "Prompt"
 
-A concise, actionable reference for maintaining visual and verbal consistency across mahlangu.dev and related channels.
+The wordmark is the site's own shell header, formalized: `~/mahlangu.dev` with a block
+cursor. One mode (dark), one accent, real terminal syntax only. This document is the
+source of truth for the site and every derived surface (stationery, social, print).
 
----
-
-## 1) Brand Basics
-
-- Brand name: Sipho Mahlangu
-- Domain: <https://mahlangu.dev>
-- Primary tagline: "Senior Backend Engineer. Distributed Systems. Fintech."
-- Secondary taglines:
-  - "Building the infrastructure where real-time data and financial systems meet."
-  - "High-throughput systems, event-driven architecture, cloud-native execution."
-
-Brand essence: precise, senior, trustworthy, engineering-led.
+Full design references live in the handoff kit (`mahlangu_dev_design_handoff_brand_kit`):
+brand board, wordmark explorations, letterhead/quote, business card, CV, email
+signature, and social artboards.
 
 ---
 
-## 2) Voice and Tone
+## 1) Wordmark
 
-- Personality: direct, confident, technically credible, understated.
-- Voice principles:
-  - Lead with outcomes and scope, not tools.
-  - Avoid training/teaching framing — this is a practitioner's portfolio.
-  - Active voice; short sentences.
-  - Prefer specificity: "high-throughput event pipelines" over "scalable systems".
-- Tone by context:
-  - Portfolio pages: professional, precise, senior-level.
-  - Contact: open, approachable, recruiter-aware.
-  - Social: concise, honest, technically grounded.
+Form: `~/mahlangu.dev▮` set in JetBrains Mono.
 
-Example bio (short):
+- `~/` muted (dark: #66696D, print: #9B9E9F), weight 400
+- `mahlangu` foreground (dark: #CDD2D6, print: #201F1F), weight 700
+- `.dev` accent (dark: #44C3CF, light/print: #18585E), weight 700
+- Cursor `▮`: accent-filled inline block, `width: 0.5em; height: 0.95em;
+  margin-left: 0.16em; vertical-align: -0.1em`. Blinks on screen, static in print.
 
-- "Senior Backend Engineer building high-throughput distributed systems and event-driven microservices in fintech and cloud-native environments."
+Glyph: `~/` weight 700 in accent, centered on a #201F1F rounded tile (radius ~23% of
+tile size). At 16px, drop the slash; the tilde alone reads. Filled tile on light
+surfaces, tile plus 1px border (#2c2c30) on dark.
 
----
+Clear space: half a tile on all sides. Min sizes: wordmark >= 120px, glyph >= 16px.
 
-## 3) Messaging Pillars
+Never: Title Case, ALL CAPS, gradients or effects, more than one accent per surface.
+The old pen-nib "M" logo is retired everywhere.
 
-- **Depth:** 10+ years of hands-on systems engineering, not breadth-first generalism.
-- **Fintech focus:** Production experience in regulated, high-stakes financial data environments.
-- **Cloud-native:** GCP, Kubernetes, event-driven architecture as default thinking.
-- **AI-augmented:** Practical use of AI tooling to improve engineering velocity — not hype.
-- **Expanding:** Web3 and applied AI systems as intentional next chapter.
+Files (generated, in the repo):
 
-Elevator pitch (<= 30 words):
-
-- "I design and operate distributed systems for fintech — real-time data pipelines, event-driven microservices, Kubernetes infrastructure — and I'm moving into applied AI and Web3."
+- `/public/brand/logo-dark.svg`, `/public/brand/logo-light.svg` (outlined paths, no
+  font dependency)
+- `/public/brand/icon.svg` plus PNG tiles at 512/192/180/48/32/16
+- `/src/app/favicon.ico` (16 is tilde-only), `/src/app/apple-icon.png` (full-bleed)
+- `/public/images/og-card.png` (1200x630, per the Social Kit artboard)
 
 ---
 
-## 4) Logo and Marks
+## 2) Color
 
-- Wordmark: "Mahlangu.dev" set in primary type (see Typography).
-- Icon (optional): simple geometric M or angled chevron motif. Keep line thickness consistent with UI borders.
-- Clear space: at least 1x the cap height around the mark.
-- Minimum size:
-  - Wordmark: ≥ 120px width on web.
-  - Icon: ≥ 24px square.
-
-Do
-
-- Use single-color versions for simplicity.
-- Keep contrast high against background.
-
-Don't
-
-- Distort, rotate, or apply complex effects.
-- Place on busy backgrounds without sufficient contrast.
-
-File suggestions:
-
-- /public/brand/logo-dark.svg
-- /public/brand/logo-light.svg
-- /public/brand/icon.svg
-
----
-
----
-
-## 2) Voice and Tone
-
-- Personality: clear, confident, helpful, humble.
-- Voice principles:
-  - Plain language (avoid jargon unless necessary).
-  - Show outcomes and impact.
-  - Active voice; short sentences.
-- Tone by context:
-  - Portfolio pages: inspiring, professional, concise.
-  - Blog/notes: explanatory, curious, honest about trade-offs.
-  - Social: approachable, respectful, short.
-- Inclusive language:
-  - Avoid assumptions; use gender-neutral phrasing.
-  - Prefer “you” and “we” when appropriate.
-
-Example bio (short):
-
-- “Software developer building performant web apps and thoughtful developer tools.”
-
----
-
-## 3) Messaging Pillars
-
-- Craft: high-quality engineering, readability, and performance.
-- Clarity: explain complex topics simply.
-- Reliability: pragmatic solutions, measured results.
-- Empathy: solutions shaped by user needs.
-
-Elevator pitch (<= 30 words):
-
-- “I design and build fast, accessible web experiences and developer tooling—turning ideas into resilient, scalable products.”
-
----
-
-## 4) Logo and Marks
-
-- Wordmark: “Mahlangu.dev” set in primary type (see Typography).
-- Icon (optional): simple geometric M or angled chevron motif. Keep line thickness consistent with UI borders.
-- Clear space: at least 1x the cap height around the mark.
-- Minimum size:
-  - Wordmark: ≥ 120px width on web.
-  - Icon: ≥ 24px square.
-
-Do
-
-- Use single-color versions for simplicity.
-- Keep contrast high against background.
-
-Don’t
-
-- Distort, rotate, or apply complex effects.
-- Place on busy backgrounds without sufficient contrast.
-
-File suggestions:
-
-- /public/brand/logo-dark.svg
-- /public/brand/logo-light.svg
-- /public/brand/icon.svg
-
----
-
-## 5) Color System
-
-Semantic-first palette powered by CSS variables. Maintain WCAG AA contrast (≥ 4.5:1 for body text).
-
-Core tokens (light theme):
-
-- --color-background: #0b0f14
-- --color-foreground: #e6eef5
-- --color-accent: #0ea5a3
-- --color-border: #21303a
-- --color-muted: #9fb1bf
-
-Core tokens (dark theme):
-
-- --color-background: #0b0f14
-- --color-foreground: #e6eef5
-- --color-accent: #0ea5a3
-- --color-border: #23323d
-- --color-muted: #9fb1bf
-
-Extended (optional):
-
-- --midnight-green: #0f3b3b
-- Success: #18a957
-- Warning: #f59e0b
-- Danger: #ef4444
-
-Usage:
-
-- Background surfaces: background
-- Primary text: foreground
-- Links/CTAs/highlights: accent
-- Dividers: border
-- Secondary text/icons: muted
-
----
-
-## 6) Typography
-
-Recommended stack:
-
-- Display/Headings: Inter, Lexend, or Satoshi (600–800 weight)
-- Body: Inter (400–500)
-- Mono (code): JetBrains Mono or Fira Code
-
-Scale:
-
-- H1: 36–60px (clamp responsive)
-- H2: 28–40px
-- H3: 22–28px
-- Body: 16–18px
-- Caption: 12–14px
-
-Guidelines:
-
-- Line length ~60–80 chars for body.
-- Line-height 1.4–1.6 for paragraphs.
-- Use letter-spacing normal; avoid excessive tracking.
-
----
-
-## 7) Layout and Spacing
-
-- Grid: 12 columns; max content width ~1200–1280px.
-- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64.
-- Section padding: 48–96px vertical on desktop; 32–64px on mobile.
-- Keep consistent gutters; align to an 8px base.
-
----
-
-## 8) Imagery and Motion
-
-Hero motif:
-
-- Right-half portrait image with a left-to-right gradient “shim” that decreases in intensity, blending into the page background.
-- Soft entrance animations (ease-out, 450–900ms) for image and shim.
-
-General imagery:
-
-- Intentional, minimal, with generous negative space.
-- Avoid busy backgrounds; maintain focus on the subject.
-- Prefer neutral temperature with subtle accent reflections.
-
-Motion:
-
-- Purposeful and subtle; avoid distracting loops.
-- Duration: 150–300ms for UI; 450–900ms for hero transitions.
-- Easing: ease-out or custom cubic-bezier(0.16, 1, 0.3, 1).
-
----
-
-## 9) Components (UI)
-
-Buttons
-
-- Primary: accent background, foreground text.
-- Secondary: transparent background, accent text, border.
-- Focus ring: 2px outline using accent at 50% opacity.
-
-Inputs
-
-- Border: 1px border color
-- Background: background slightly elevated (use alpha or subtle tint)
-- Focus: accent ring, no heavy glow
-
-Cards
-
-- Background: slightly raised over background (2–4 dp)
-- Border: 1px border; hover: subtle shadow or border-accent-20
-
-Links
-
-- Default: accent text with underline on hover.
-- Avoid only-color differentiation—use underline or weight.
-
----
-
-## 10) Accessibility
-
-- Color contrast: AA minimum; AAA where feasible for body text.
-- Focus states: visible on keyboard navigation.
-- Motion preferences: respect prefers-reduced-motion.
-- Semantics: headings in order; landmarks (header, main, footer); aria-labels for interactive elements.
-
----
-
-## 11) SEO and Social
-
-Meta title pattern:
-
-- “Sipho Mahlangu — Software Developer” or page-specific “{Page Title} — Mahlangu.dev”
-
-Meta description (<= 160 chars):
-
-- “Software developer crafting fast, accessible web apps and developer tools. Explore projects, articles, and contact.”
-
-Open Graph/Twitter:
-
-- og:title = page title
-- og:description = meta description
-- og:image = /images/og-default.jpg (1200x630)
-- twitter:card = summary_large_image
-
-Canonical:
-
-- Always use <https://mahlangu.dev>
-
----
-
-## 12) Content Examples
-
-Headline examples:
-
-- “Building digital experiences, one line at a time.”
-- “From prototype to production—reliably.”
-
-CTA examples:
-
-- “View Projects”
-- “Get in Touch”
-- “Read the Notes”
-
-Case study opener:
-
-- “Reduced build time by 42% and improved LCP by 28% through code splitting and caching.”
-
----
-
-## 13) Do/Don’t
-
-Do
-
-- Keep layouts spacious and typography legible.
-- Use accent sparingly for hierarchy and actions.
-- Maintain consistent border radii and spacing scale.
-
-Don’t
-
-- Overuse gradients; keep them functional (e.g., hero shim).
-- Add multiple competing animations at once.
-- Sacrifice contrast for aesthetics.
-
----
-
-## 14) Implementation Tokens (CSS)
-
-Use CSS variables to theme light/dark consistently.
+Dark is the only site mode. Light values exist for print and light surfaces
+(letterhead, business card back, logo-light).
 
 ```css
-:root {
-  --color-background: #f7fafc;
-  --color-foreground: #0b0f14;
-  --color-accent: #0ea5a3;
-  --color-border: #d6e0e7;
-  --color-muted: #5c6b76;
-  --midnight-green: #0f3b3b;
-}
-
-[data-theme='dark'] {
-  --color-background: #0b0f14;
-  --color-foreground: #e6eef5;
-  --color-accent: #0ea5a3;
-  --color-border: #23323d;
-  --color-muted: #9fb1bf;
-  --midnight-green: #0f3b3b;
-}
+--background:   #201F1F;  /* eerie-black */
+--foreground:   #CDD2D6;  /* slate-gray-800 */
+--accent:       #44C3CF;  /* midnight-green-700, dark surfaces */
+--accent-print: #18585E;  /* midnight-green-500, light surfaces + print */
+--accent-soft:  #0A2325;  /* dark; light contexts use #C1EBEF */
+--border:       #27272A;
+--bg-light:     #D9D9D5;  /* black-olive-900, print/light contexts only */
 ```
 
-Example Tailwind utilities:
+Rules:
 
-- Text: text-[var(--color-foreground)]
-- Background: bg-[var(--color-background)]
-- Accent: text-[var(--color-accent)] / bg-[var(--color-accent)]
-- Border: border-[var(--color-border)]
-
-Hero shim (concept):
-
-- Full overlay on right-half image: bg-gradient-to-r from-[var(--color-background)]/95 to-transparent
-- Animate width from 0% → 100% (ease-out, 0.9s)
+- One accent per surface. Accent is for marks, links, and markers, not long text on
+  light backgrounds.
+- Body pairs #CDD2D6 on #201F1F and #201F1F on #D9D9D5 both pass AA.
+- Full ramps (charcoal, raisin-black, black-olive, slate-gray, eerie-black,
+  midnight-green) live in `src/styles/globals.css`.
 
 ---
 
-## 15) Governance
+## 3) Typography
 
-- Source of truth: this document (version in repo).
-- Review cycle: quarterly or when introducing major components.
-- Change log: maintain PRs with screenshots for visual updates.
+- JetBrains Mono 400/700: the voice. Wordmark, UI, headings, labels.
+- Fira Code 300/400/700: code samples and display numerals (ligatures welcome).
+- Inter 400/700: long-form print body only (letterhead, CV paragraphs).
+
+Scale: display 44-60/700 · section heading 24/700 with `// ` accent marker · body
+14-16/400 with line-height 1.6 · caption 11-12.
+
+Spacing scale 4/8/12/16/24/32/48/64. Radius: 4 (chips, buttons), 6-8 (cards), 10
+(panels), ~23% (glyph tiles). Opacity steps via color-mix: 85/80/70/60/50/40/25/20%
+of foreground.
 
 ---
 
-Questions or updates: open an issue in the repository and tag “brand”.
+## 4) Motifs: the brand's grammar
+
+Budget: one prompt plus one cursor per surface, maximum.
+
+- `~/$ command` prompt opens a surface or section (e.g. `~/$ whoami`, `~/$ cat now.md`)
+- `// ` comment marker leads every heading
+- `$ ` command marker leads list items
+- `a | b | c` accent pipes separate parallel facts
+- `statement▮` cursor ends a key statement
+- 28px dot grid backdrop at 35% opacity (hero and cover surfaces)
+- Terminal chrome: two dim dots then one accent dot, always that order
+- Real terminal syntax only; nothing that would not parse
+
+---
+
+## 5) Voice
+
+Precise, senior, understated. A person, not a company: first person, no "we".
+
+- Lead with outcomes and scope, not tools.
+- Active voice, short sentences, specific nouns: "high-throughput event pipelines",
+  never "scalable solutions".
+- Positioning line: Senior Full Stack Engineer | AI Engineering | Distributed Systems
+- Signature sentence: "I design event-driven backends and AI-native systems, and I
+  keep them boring in production."
+
+---
+
+## 6) Motion
+
+- Cursor blink: `@keyframes blink { 0%, 55% { opacity: 1 } 56%, 100% { opacity: 0 } }`,
+  1.1s `steps(1)` infinite. Screen only; static in print and exports.
+- Entrances: fadeUp 24px, ease-out, 0.45-0.5s, staggered ~0.1s.
+- Hover states: accent border plus 5% accent background tint.
+- `prefers-reduced-motion` disables blink and entrances (CSS media query plus
+  `MotionConfig reducedMotion="user"`).
+
+---
+
+## 7) SEO and social
+
+- Title pattern: "Sipho Mahlangu · Senior Full Stack Engineer | AI & Distributed
+  Systems"
+- OG image: `/images/og-card.png` (1200x630), regenerate from the Social Kit artboard
+  when positioning changes.
+- Canonical: always `https://mahlangu.dev`.
+
+---
+
+## 8) Governance
+
+- Source of truth: this document plus the handoff kit references.
+- Visual changes land as PRs with screenshots.
+- The stationery suite (letterhead, quote, business card, CV, email signature) derives
+  from the same tokens; keep it in sync when tokens change.

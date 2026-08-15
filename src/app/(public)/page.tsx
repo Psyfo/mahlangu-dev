@@ -1,13 +1,9 @@
 import CommandPalette from '@/components/CommandPalette';
 
-import About from './components/About';
 import ContactSection from './components/ContactSection';
-import Education from './components/Education';
-import Experience from './components/Experience';
 import HeroSection2 from './components/HeroSection2';
-import Interests from './components/Interests';
+import Now from './components/Now';
 import Projects from './components/Projects';
-import TechnicalSkills from './components/TechnicalSkills';
 
 export default function HomePage() {
   return (
@@ -15,12 +11,8 @@ export default function HomePage() {
       <CommandPalette />
       <main className='min-h-screen'>
         <HeroSection2 />
-        <About />
-        <TechnicalSkills />
-        <Experience />
+        <Now />
         <Projects />
-        <Interests />
-        <Education />
         <ContactSection />
       </main>
     </>
