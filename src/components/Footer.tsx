@@ -23,7 +23,7 @@ export default function Footer() {
             linkedin
           </a>
           <a
-            href='mailto:omotola@afrogenitor.com'
+            href='mailto:omotola@mahlangu.dev'
             className='hover:text-[var(--color-accent)] transition-colors'
           >
             email

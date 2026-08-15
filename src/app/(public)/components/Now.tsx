@@ -41,7 +41,7 @@ const entries: Entry[] = [
 
 export default function Now() {
   return (
-    <section id='now' className='mx-auto px-6 py-24 md:py-32 max-w-3xl'>
+    <section id='now' className='mx-auto px-6 py-24 md:py-28 max-w-4xl'>
       <SectionHeading>Now</SectionHeading>
       <motion.p
         initial={{ y: 24, opacity: 0 }}
