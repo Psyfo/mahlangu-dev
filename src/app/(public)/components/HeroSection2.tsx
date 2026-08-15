@@ -12,7 +12,7 @@ export default function HeroSection2() {
   return (
     <section
       id='hero-section'
-      className='relative flex md:flex-row flex-col items-stretch bg-[var(--color-background)] w-full h-[100svh] overflow-hidden'
+      className='relative flex bg-[var(--color-background)] w-full h-[100svh] overflow-hidden'
     >
       {/* Subtle dot-grid backdrop */}
       <div
@@ -25,12 +25,11 @@ export default function HeroSection2() {
         }}
       />
 
-      {/* Left: Text Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='z-10 flex flex-col justify-center items-start px-8 md:px-12 py-12 w-full md:w-1/2 h-1/2 md:h-full'
+        className='z-10 flex flex-col justify-center items-start mx-auto px-6 w-full max-w-4xl'
       >
         <motion.p
           initial={{ y: 20, opacity: 0 }}
@@ -74,10 +73,14 @@ export default function HeroSection2() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.45, ease: 'easeOut', delay: 0.55 }}
-          className='mt-6 max-w-md font-cmd text-[var(--color-foreground)]/60 text-sm leading-relaxed'
+          className='mt-6 max-w-xl font-cmd text-[var(--color-foreground)]/60 text-sm leading-relaxed'
         >
-          I design event-driven backends and AI-native systems — and keep them
+          I design event-driven backends and AI-native systems, and I keep them
           boring in production.
+          <span
+            aria-hidden
+            className='inline-block bg-[var(--color-accent)] blink ml-1.5 w-[0.5em] h-[0.95em] align-[-0.1em]'
+          />
         </motion.p>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -105,29 +108,10 @@ export default function HeroSection2() {
         </motion.div>
       </motion.div>
 
-      {/* Right: Background Image with soft entrance + full overlay shim */}
-      <div className='relative w-full md:w-1/2 h-1/2 md:h-full'>
-        <motion.div
-          aria-hidden
-          className='absolute inset-0 bg-cover bg-center will-change-transform'
-          style={{
-            backgroundImage: "url('/images/hero_portrait_2.jpg')",
-            backgroundPosition: 'center 20%',
-          }}
-          initial={{ x: 40, opacity: 0, scale: 1.04 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-        />
-        {/* Gradient shim fades the image into the background colour */}
-        <div className='left-0 absolute inset-y-0 w-full pointer-events-none'>
-          <div className='bg-gradient-to-r from-[var(--color-background)] via-[var(--color-background)]/40 to-transparent w-full h-full' />
-        </div>
-      </div>
-
       {/* Scroll cue */}
       <motion.a
-        href='#about'
-        aria-label='Scroll to about section'
+        href='#now'
+        aria-label='Scroll to the now section'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 6, 0] }}
         transition={{

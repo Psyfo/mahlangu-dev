@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion';
 import React from 'react';
 
 import AppShell from '@/components/AppShell';
@@ -7,5 +8,9 @@ export default function PublicLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <AppShell>{children}</AppShell>;
+  return (
+    <AppShell>
+      <MotionConfig reducedMotion='user'>{children}</MotionConfig>
+    </AppShell>
+  );
 }

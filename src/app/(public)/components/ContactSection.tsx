@@ -70,8 +70,9 @@ export default function ContactSection() {
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
         className='mb-8 text-[var(--color-foreground)]/70 text-base'
       >
-        Open to senior engineering roles, contract work, and collaborations in
-        AI engineering and distributed systems. Recruiters welcome.
+        Building something that needs a solid backend, or an AI feature that
+        has to behave in production? Tell me about it. Contract work,
+        collaborations, and interesting problems all welcome.
       </motion.p>
 
       {/* Terminal-window form */}
