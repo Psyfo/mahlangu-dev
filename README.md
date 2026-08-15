@@ -55,6 +55,6 @@ from `master` (nixpacks: `npm ci`, `npm run build`, `npm run start`). Migrated
 
 ## Contact
 
-- **Email:** [omotola@afrogenitor.com](mailto:omotola@afrogenitor.com)
+- **Email:** [omotola@mahlangu.dev](mailto:omotola@mahlangu.dev)
 - **LinkedIn:** [sipho-mahlangu](https://www.linkedin.com/in/sipho-mahlangu/)
 - **GitHub:** [@Psyfo](https://github.com/Psyfo)

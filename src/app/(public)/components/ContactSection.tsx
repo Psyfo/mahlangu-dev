@@ -7,8 +7,8 @@ import SectionHeading from './SectionHeading';
 
 const links = [
   {
-    label: 'omotola@afrogenitor.com',
-    href: 'mailto:omotola@afrogenitor.com',
+    label: 'omotola@mahlangu.dev',
+    href: 'mailto:omotola@mahlangu.dev',
     note: 'email',
   },
   {
