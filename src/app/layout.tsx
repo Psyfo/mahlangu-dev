@@ -9,9 +9,9 @@ const structuredData = {
   '@type': 'Person',
   name: 'Sipho Omotola Mahlangu',
   url: 'https://mahlangu.dev',
-  image: 'https://mahlangu.dev/images/hero_portrait_2.jpg',
+  image: 'https://mahlangu.dev/images/og-card.png',
   description:
-    'Senior Full Stack Engineer specializing in distributed systems, event-driven architectures, and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
+    'Senior full stack engineer building event-driven backends and AI-native systems: grounded agents, LLM workflows, and platforms kept boring in production.',
   jobTitle: 'Senior Full Stack Engineer',
   address: {
     '@type': 'PostalAddress',
@@ -40,14 +40,11 @@ const structuredData = {
   ],
 };
 
-// Applies a saved explicit theme before first paint to avoid a flash
-const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`;
-
 export const metadata = {
   metadataBase: new URL('https://mahlangu.dev'),
-  title: 'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
+  title: 'Sipho Mahlangu · Senior Full Stack Engineer | AI & Distributed Systems',
   description:
-    'Senior Full Stack Engineer with 10+ years building high-throughput distributed systems — now focused on AI-enabled applications, agentic systems, and intelligent software architectures.',
+    'I build event-driven backends and AI-native systems, and keep them boring in production. Currently building BYO Pulse and uVelaphi. Open for contract work and collaborations.',
   keywords: [
     'Senior Full Stack Engineer',
     'AI Engineer',
@@ -67,9 +64,9 @@ export const metadata = {
   ],
   openGraph: {
     title:
-      'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
+      'Sipho Mahlangu · Senior Full Stack Engineer | AI & Distributed Systems',
     description:
-      'Senior Full Stack Engineer specializing in distributed systems and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
+      'I build event-driven backends and AI-native systems, and keep them boring in production. Currently building BYO Pulse and uVelaphi.',
     url: 'https://mahlangu.dev',
     siteName: 'Sipho Mahlangu',
     images: [
@@ -77,7 +74,7 @@ export const metadata = {
         url: 'https://mahlangu.dev/images/og-card.png',
         width: 1200,
         height: 630,
-        alt: 'Sipho Mahlangu, Senior Full Stack Engineer: AI Engineering, Agentic Systems, Distributed Systems',
+        alt: '~/mahlangu.dev: Sipho Mahlangu, Senior Full Stack Engineer, AI and Distributed Systems',
       },
     ],
     locale: 'en_US',
@@ -86,9 +83,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Sipho Mahlangu — Senior Full Stack Engineer | AI & Distributed Systems',
+      'Sipho Mahlangu · Senior Full Stack Engineer | AI & Distributed Systems',
     description:
-      'Senior Full Stack Engineer specializing in distributed systems and AI-enabled applications — agentic systems, LLM workflows, and scalable backend platforms.',
+      'I build event-driven backends and AI-native systems, and keep them boring in production. Currently building BYO Pulse and uVelaphi.',
     images: ['https://mahlangu.dev/images/og-card.png'],
   },
 };
@@ -102,7 +99,6 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <link rel='canonical' href='https://mahlangu.dev' />
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
