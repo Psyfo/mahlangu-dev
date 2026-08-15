@@ -1,26 +1,35 @@
 # mahlangu.dev
 
-Personal portfolio of **Sipho Omotola Mahlangu** — Senior Backend / Platform Engineer specializing in distributed systems, event-driven microservices, and cloud-native infrastructure in fintech environments.
+Personal site of **Sipho Omotola Mahlangu**: what I'm building now, and how to get in
+touch. Senior full stack engineer working on event-driven backends and AI-native
+systems, kept boring in production.
+
+Not a CV site. The CV, letterhead, and the rest of the stationery suite live in the
+brand kit as print-ready documents; the site is a now page plus a front door.
 
 ## Sections
 
-- **Hero**: name, title, and positioning tags
-- **About**: career narrative and focus areas
-- **Technical Skills**: categorized by domain (backend, AI engineering, cloud, data, frontend)
-- **Experience**: role history with focus lines
-- **Projects**: featured work (BYO Pulse, with a device showcase board)
-- **Areas of Interest**: AI engineering, distributed systems, personal curiosities
-- **Education**: degrees and certifications
-- **Contact**: email form, LinkedIn, GitHub
-- **Command Palette**: keyboard navigation via Ctrl+K / Cmd+K
+- **Hero**: `~/$ whoami`, name, positioning line, signature statement
+- **Now**: `~/$ cat now.md`, what I'm actively building and exploring
+- **Projects**: featured work (BYO Pulse, uVelaphi, client builds) in a slider
+- **Contact**: terminal-window email form, plus direct channels
+- **Command palette**: keyboard navigation via Ctrl+K / Cmd+K
 
-## Tech Stack
+## Brand
 
-- **Next.js** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion**
-- **cmdk**
+The "Prompt" system: the wordmark is the site's shell header formalized
+(`~/mahlangu.dev▮`), dark-only with a single teal accent. Tokens, motifs, and rules
+in [docs/BRAND.md](docs/BRAND.md). Brand marks are generated assets in
+`public/brand/` (outlined SVGs plus favicon tiles); the OG card artboard source lives
+in the handoff kit.
+
+## Tech stack
+
+- **Next.js** (App Router) + **TypeScript**
+- **Tailwind CSS v4** (CSS-variable tokens, single dark theme)
+- **Framer Motion** (entrances, respects reduced motion)
+- **cmdk** (command palette)
+- **ZeptoMail** (contact form delivery, via `/api/contact`)
 
 ## Development
 
@@ -31,67 +40,21 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+`npm run build` must pass before pushing; CI runs the same build against PRs.
+
+The contact form needs `ZEPTOMAIL_TOKEN` and `CONTACT_TO_ADDRESS` at runtime (Doppler
+project `mahlangu-dev`); without them it returns a friendly 503 and the rest of the
+site works normally. Umami analytics is injected at build time via
+`NEXT_PUBLIC_UMAMI_WEBSITE_ID` and stays off in local dev.
+
+## Hosting
+
+Deployed on [Coolify](https://coolify.mahlangu.dev) (self-hosted), auto-deploying
+from `master` (nixpacks: `npm ci`, `npm run build`, `npm run start`). Migrated
+2026-07-19 from a DigitalOcean droplet; the old PM2/rsync deploy pipeline is gone.
+
 ## Contact
 
 - **Email:** [omotola@afrogenitor.com](mailto:omotola@afrogenitor.com)
 - **LinkedIn:** [sipho-mahlangu](https://www.linkedin.com/in/sipho-mahlangu/)
-- **GitHub:** [github.com/Psyfo](https://github.com/Psyfo)
-
-## 🚀 Features
-
-- **Animated Hero Section:** Engaging introduction with smooth entrance effects.
-- **Professional Summary:** Brief overview of experience and impact.
-- **Technical Skills:** Categorized and animated list of programming languages, frameworks, cloud/devops tools, certifications, and spoken languages.
-- **Work Experience:** Timeline of roles, responsibilities, and achievements, with discrete animations.
-- **Projects:** Highlighted portfolio projects with tech stack and impact.
-- **Education:** Academic background and certifications.
-- **Contact Section:** Easy ways to get in touch, including email, LinkedIn, GitHub, and phone.
-- **Command Palette:** Quick navigation between sections using Cmd+K / Ctrl+K.
-
-## 🛠️ Tech Stack
-
-- **Next.js** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** (animations)
-- **cmdk** (command palette)
-- **Deployed on Azure or VPS** (optional)
-
-## 📦 Getting Started
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-2. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-3. **Open [http://localhost:3000](http://localhost:3000) in your browser.**
-
-## ✨ Usage
-
-- Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) to open the command palette and jump to any section.
-- Scroll to explore animated sections and learn more about Sipho’s skills and experience.
-
-## 📄 Structure
-
-- `src/app/(public)/components/` – All main sections and UI components
-- `src/components/CommandPalette.tsx` – Command palette for navigation
-
-## 📬 Contact
-
-- **Email:** [omotolamahlangu@gmail.com](mailto:omotolamahlangu@gmail.com)
-- **LinkedIn:** [sipho-mahlangu](https://www.linkedin.com/in/sipho-mahlangu/)
 - **GitHub:** [@Psyfo](https://github.com/Psyfo)
-- **Phone:** +263 776 092 688
-
----
-
-> Built and maintained by Sipho Omotola Mahlangu.  
-> Feel free to fork, contribute, or reach out for collaboration!
-
-## Hosting
-
-Deployed on [Coolify](https://coolify.mahlangu.dev) (self-hosted), auto-deploying from `master`.
-Migrated 2026-07-19 from a DigitalOcean droplet (PM2 + Caddy + GitHub Actions rsync).
