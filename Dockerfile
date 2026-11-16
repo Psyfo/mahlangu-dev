@@ -38,7 +38,13 @@ ENV NEXT_PUBLIC_UMAMI_WEBSITE_ID=$NEXT_PUBLIC_UMAMI_WEBSITE_ID
 ENV NEXT_PUBLIC_UMAMI_SRC=$NEXT_PUBLIC_UMAMI_SRC
 ENV NEXT_TELEMETRY_DISABLED=1
 # Also runs the postbuild next-sitemap step, which writes into public/.
-RUN npm run build
+# An ARG that Coolify does not provide still becomes an EMPTY variable via the
+# ENV lines above, and the app's `process.env.X ?? default` fallbacks do not
+# fire for "" (only for undefined). That silently dropped the Umami script
+# (NEXT_PUBLIC_UMAMI_SRC is not set in Coolify) in the first test build. Unset
+# every empty NEXT_PUBLIC_* so an unset value behaves as unset, as it did
+# under Nixpacks.
+RUN for v in $(env | sed -n 's/^\(NEXT_PUBLIC_[A-Z0-9_]*\)=$//p'); do unset "$v"; done;     npm run build
 
 FROM node:22-slim AS runtime
 WORKDIR /app
