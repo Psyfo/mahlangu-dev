@@ -50,7 +50,9 @@ site works normally. Umami analytics is injected at build time via
 ## Hosting
 
 Deployed on [Coolify](https://coolify.mahlangu.dev) (self-hosted), auto-deploying
-from `master` (nixpacks: `npm ci`, `npm run build`, `npm run start`). Migrated
+from `master`. Coolify builds the repo's `Dockerfile`, which ships only Next's
+standalone output (about 400 MB, down from 2.25 GB under Nixpacks); the mail
+secrets are runtime-only env vars and never enter the image. Migrated
 2026-07-19 from a DigitalOcean droplet; the old PM2/rsync deploy pipeline is gone.
 
 ## Contact
